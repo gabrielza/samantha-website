@@ -62,7 +62,7 @@ export default function HomePage() {
               {/* Quick Actions */}
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href={jp.forSale()}
+                  href={jp.agentListings}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-5 py-3 text-[13px] font-semibold text-teal-900 hover:bg-gold-400 transition-colors"
@@ -126,7 +126,7 @@ export default function HomePage() {
               {
                 title: 'Buy a Home',
                 desc: 'Browse verified listings across Cape Town. From first-time purchases to luxury investments.',
-                href: jp.forSale(),
+                href: jp.agentListings,
                 icon: (
                   <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955a1.126 1.126 0 0 1 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
                 ),
