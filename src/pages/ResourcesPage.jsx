@@ -171,22 +171,26 @@ export default function ResourcesPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { label: 'Bond Calculator', desc: 'Estimate your monthly repayments', href: jp.calculators, icon: '🧮' },
-              { label: 'Free Valuation', desc: 'Know what your property is worth', href: jp.freeValuation, icon: '📊' },
+              { label: 'Free Valuation', desc: 'Know what your property is worth', href: '/valuation', icon: '📊', internal: true },
               { label: 'Email Alerts', desc: 'Get notified of new listings', href: jp.emailAlerts, icon: '🔔' },
               { label: 'Area Profiles', desc: 'Research any neighbourhood', href: jp.areaProfiles, icon: '📍' },
-            ].map((tool) => (
-              <a
+            ].map((tool) => {
+              const Tag = tool.internal ? Link : 'a';
+              const linkProps = tool.internal
+                ? { to: tool.href }
+                : { href: tool.href, target: '_blank', rel: 'noopener noreferrer' };
+              return (
+              <Tag
                 key={tool.label}
-                href={tool.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...linkProps}
                 className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 p-5 hover:shadow-md hover:border-gold-200 transition-all text-center group"
               >
                 <span className="text-2xl">{tool.icon}</span>
                 <span className="text-[13px] font-medium text-teal-700 group-hover:text-gold-600 transition-colors">{tool.label}</span>
                 <span className="text-[11px] text-gray-400">{tool.desc}</span>
-              </a>
-            ))}
+              </Tag>
+              );
+            })}
           </div>
         </div>
       </section>

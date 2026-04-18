@@ -10,6 +10,7 @@ import NeighborhoodDetailPage from './pages/NeighborhoodDetailPage';
 import ResourcesPage from './pages/ResourcesPage';
 import ItineraryPage from './pages/ItineraryPage';
 import ContactPage from './pages/ContactPage';
+import ValuationPage from './pages/ValuationPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/cape-town-day-out" element={<ItineraryPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/valuation" element={<ValuationPage />} />
         </Route>
       </Routes>
     </>

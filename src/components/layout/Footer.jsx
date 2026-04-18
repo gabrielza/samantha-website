@@ -61,7 +61,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li><a href={jp.forSale()} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Residential For Sale</a></li>
               <li><a href={jp.toRent()} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Residential To Let</a></li>
-              <li><a href={jp.freeValuation} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Free Property Valuation</a></li>
+              <li><Link to="/valuation" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Free Property Valuation</Link></li>
               <li><a href={jp.calculators} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Bond Calculators</a></li>
               <li><a href={jp.emailAlerts} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Property Email Alerts</a></li>
             </ul>

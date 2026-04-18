@@ -134,7 +134,8 @@ export default function HomePage() {
               {
                 title: 'Sell Your Property',
                 desc: 'Get a free market valuation and expert pricing strategy to maximise your return.',
-                href: jp.freeValuation,
+                href: '/valuation',
+                internal: true,
                 icon: (
                   <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
                 ),
@@ -147,12 +148,15 @@ export default function HomePage() {
                   <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" /></svg>
                 ),
               },
-            ].map((service) => (
-              <a
+            ].map((service) => {
+              const Tag = service.internal ? Link : 'a';
+              const linkProps = service.internal
+                ? { to: service.href }
+                : { href: service.href, target: '_blank', rel: 'noopener noreferrer' };
+              return (
+              <Tag
                 key={service.title}
-                href={service.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...linkProps}
                 className="group rounded-2xl border border-gray-100 bg-white p-8 hover:shadow-lg hover:border-gold-200 transition-all duration-300"
               >
                 <div className="h-12 w-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center group-hover:bg-gold-50 group-hover:text-gold-600 transition-colors">
@@ -164,8 +168,9 @@ export default function HomePage() {
                   Explore
                   <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
                 </span>
-              </a>
-            ))}
+              </Tag>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -210,21 +215,25 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { label: 'Bond Calculator', href: jp.calculators, icon: '\uD83E\uDDEE' },
-              { label: 'Free Valuation', href: jp.freeValuation, icon: '\uD83D\uDCCA' },
+              { label: 'Free Valuation', href: '/valuation', icon: '\uD83D\uDCCA', internal: true },
               { label: 'Email Alerts', href: jp.emailAlerts, icon: '\uD83D\uDD14' },
               { label: 'Area Profiles', href: jp.areaProfiles, icon: '\uD83D\uDCCD' },
-            ].map((tool) => (
-              <a
+            ].map((tool) => {
+              const Tag = tool.internal ? Link : 'a';
+              const linkProps = tool.internal
+                ? { to: tool.href }
+                : { href: tool.href, target: '_blank', rel: 'noopener noreferrer' };
+              return (
+              <Tag
                 key={tool.label}
-                href={tool.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...linkProps}
                 className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 p-5 hover:shadow-md hover:border-gold-200 transition-all text-center group"
               >
                 <span className="text-2xl">{tool.icon}</span>
                 <span className="text-[13px] font-medium text-teal-700 group-hover:text-gold-600 transition-colors">{tool.label}</span>
-              </a>
-            ))}
+              </Tag>
+              );
+            })}
           </div>
         </div>
       </section>
