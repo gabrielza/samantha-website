@@ -26,8 +26,8 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-navy-900/95 via-navy-800/80 to-navy-900/90 z-10" />
           <img
-            src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1920&q=80"
-            alt="Cape Town Atlantic Seaboard aerial view"
+            src="/images/Free_Property_Valuation.jpeg"
+            alt="Luxury Cape Town home with Table Mountain backdrop"
             className="h-full w-full object-cover"
           />
         </div>
@@ -234,6 +234,58 @@ export default function HomePage() {
             {testimonials.slice(0, 3).map((t) => (
               <TestimonialCard key={t.id} testimonial={t} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== REFERRAL PROGRAMME ===== */}
+      <section className="relative py-20 bg-navy-900 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/70 to-transparent z-10" />
+        <img
+          src="/images/Comission for leads.jpeg"
+          alt="Samantha Black — Referral programme"
+          className="absolute inset-0 h-full w-full object-cover object-right"
+        />
+        <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-xl">
+            <p className="text-sm uppercase tracking-[0.2em] text-gold-400 font-medium">Referral Programme</p>
+            <h2 className="mt-3 font-heading text-3xl sm:text-4xl font-bold text-white">
+              Get Paid for Your Referrals
+            </h2>
+            <p className="mt-4 text-gray-300 leading-relaxed">
+              Know someone looking to buy or sell in Cape Town? Refer them to me and earn a 
+              referral fee on every successful sale. Let's work together and get results.
+            </p>
+            <ul className="mt-6 space-y-3">
+              <li className="flex items-center gap-3 text-white">
+                <svg className="h-5 w-5 text-gold-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                Earn for every closed deal
+              </li>
+              <li className="flex items-center gap-3 text-white">
+                <svg className="h-5 w-5 text-gold-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                Simple, transparent process
+              </li>
+              <li className="flex items-center gap-3 text-white">
+                <svg className="h-5 w-5 text-gold-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                Open to agents and the public alike
+              </li>
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent("Hi Samantha, I'd like to learn more about your referral programme.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-900 hover:bg-gold-400 transition-colors"
+              >
+                Contact Me for Details
+              </a>
+              <a
+                href={`mailto:${contact.email}?subject=${encodeURIComponent('Referral Programme Inquiry')}`}
+                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+              >
+                Email Me
+              </a>
+            </div>
           </div>
         </div>
       </section>

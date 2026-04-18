@@ -29,13 +29,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Portrait */}
             <div className="relative">
-              <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-navy-800 to-navy-600 overflow-hidden shadow-xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <span className="font-heading text-6xl font-bold text-gold-400/20">SB</span>
-                    <p className="text-sm text-white/40 mt-2">Professional portrait</p>
-                  </div>
-                </div>
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="/images/Samantha_Profile_Picture.jpeg"
+                  alt="Samantha Black — Property Practitioner, Just Property Cape Town"
+                  className="h-full w-full object-cover object-top"
+                />
               </div>
               {/* Credentials overlay */}
               <div className="absolute -bottom-6 -right-6 rounded-xl bg-white p-5 shadow-lg">
