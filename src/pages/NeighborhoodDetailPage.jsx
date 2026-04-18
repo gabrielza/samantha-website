@@ -12,7 +12,7 @@ export default function NeighborhoodDetailPage() {
   if (!neighborhood) {
     return (
       <div className="py-32 text-center">
-        <h1 className="text-3xl font-bold text-navy-800">Neighborhood Not Found</h1>
+        <h1 className="text-3xl font-bold text-teal-800">Neighborhood Not Found</h1>
         <Link to="/neighborhoods" className="mt-6 inline-block text-gold-500 font-medium hover:underline">
           &larr; Back to Neighborhoods
         </Link>
@@ -27,13 +27,13 @@ export default function NeighborhoodDetailPage() {
   return (
     <>
       <SEO
-        title={`${neighborhood.name} â€” Neighborhood Guide`}
+        title={`${neighborhood.name} — Neighborhood Guide`}
         description={neighborhood.description.slice(0, 160)}
         path={`/neighborhoods/${neighborhood.slug}`}
       />
 
       {/* Hero */}
-      <section className="bg-navy-800 py-16">
+      <section className="bg-teal-800 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-xs text-gray-400 mb-6">
             <Link to="/" className="hover:text-gold-400">Home</Link>
@@ -62,7 +62,7 @@ export default function NeighborhoodDetailPage() {
 
               {/* Highlights */}
               <div className="mt-10">
-                <h2 className="text-xl font-semibold text-navy-800 mb-4">Key Highlights</h2>
+                <h2 className="text-xl font-semibold text-teal-800 mb-4">Key Highlights</h2>
                 <ul className="space-y-3">
                   {neighborhood.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-3 text-gray-700">
@@ -78,7 +78,7 @@ export default function NeighborhoodDetailPage() {
               {/* Properties in Area */}
               {areaProperties.length > 0 && (
                 <div className="mt-12">
-                  <h2 className="text-xl font-semibold text-navy-800 mb-6">
+                  <h2 className="text-xl font-semibold text-teal-800 mb-6">
                     Available Properties in {neighborhood.region}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -94,8 +94,8 @@ export default function NeighborhoodDetailPage() {
             <div className="lg:col-span-1">
               <div className="lg:sticky lg:top-24 space-y-6">
                 {/* Quick Facts */}
-                <div className="rounded-2xl bg-sand-50 p-6 border border-sand-200">
-                  <h3 className="text-lg font-semibold text-navy-800 mb-4">Quick Facts</h3>
+                <div className="rounded-2xl bg-slate-50 p-6 border border-slate-200">
+                  <h3 className="text-lg font-semibold text-teal-800 mb-4">Quick Facts</h3>
                   <dl className="space-y-3">
                     {[
                       { label: 'Price Range', value: neighborhood.priceRange },
@@ -105,15 +105,15 @@ export default function NeighborhoodDetailPage() {
                     ].map((item) => (
                       <div key={item.label}>
                         <dt className="text-xs uppercase tracking-wider text-gray-500">{item.label}</dt>
-                        <dd className="text-sm font-medium text-navy-800">{item.value}</dd>
+                        <dd className="text-sm font-medium text-teal-800">{item.value}</dd>
                       </div>
                     ))}
                   </dl>
                 </div>
 
                 {/* Contact */}
-                <div className="rounded-2xl bg-sand-50 p-6 border border-sand-200">
-                  <h3 className="text-lg font-semibold text-navy-800 mb-1">
+                <div className="rounded-2xl bg-slate-50 p-6 border border-slate-200">
+                  <h3 className="text-lg font-semibold text-teal-800 mb-1">
                     Interested in {neighborhood.name}?
                   </h3>
                   <p className="text-xs text-gray-500 mb-5">Get expert guidance on this area.</p>

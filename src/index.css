@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-50: #f0f3f9;
-  --color-navy-100: #d9e0ef;
-  --color-navy-200: #b3c1df;
-  --color-navy-300: #8da2cf;
-  --color-navy-400: #6783bf;
-  --color-navy-500: #4164af;
-  --color-navy-600: #34508c;
-  --color-navy-700: #273c69;
-  --color-navy-800: #1B2A4A;
-  --color-navy-900: #0e1525;
+  /* Bluestone-inspired teal palette */
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #164E63;
+  --color-teal-900: #114c5f;
+  --color-teal-950: #0a2e38;
 
+  /* Keep gold accent — pairs beautifully with teal */
   --color-gold-50: #faf6ee;
   --color-gold-100: #f2e8d0;
   --color-gold-200: #e5d1a1;
@@ -23,17 +26,24 @@
   --color-gold-800: #493b1e;
   --color-gold-900: #251e0f;
 
-  --color-sand-50: #faf8f5;
-  --color-sand-100: #f5f0e8;
-  --color-sand-200: #ebe1d1;
+  /* Slate grays matching Bluestone */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0F172A;
 
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --animate-fade-in: fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slide-up: slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-fade-in-delay: fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
-  --animate-slide-up-delay: slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-slide-up: slide-up 0.6s ease-out;
+  --animate-fade-in-delay: fade-in 0.6s ease-out 0.15s both;
+  --animate-slide-up-delay: slide-up 0.6s ease-out 0.3s both;
 }
 
 @keyframes fade-in {
@@ -42,11 +52,10 @@
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Base styles */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -55,29 +64,22 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: #2d3748;
+  color: #0F172A;
   line-height: 1.6;
 }
 
 h1, h2, h3 {
   font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
-/* Display headings use serif */
-.font-display {
-  font-family: var(--font-display);
-}
-
-/* Smooth image loading */
 img {
   transition: opacity 0.3s ease;
 }
 
-/* Selection color */
 ::selection {
-  background-color: #C9A96E;
+  background-color: #164E63;
   color: white;
 }

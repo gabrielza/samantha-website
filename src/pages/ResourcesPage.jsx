@@ -7,19 +7,19 @@ import jp from '../data/justproperty';
 const sellingFramework = [
   {
     title: 'Pricing Strategy',
-    icon: 'ðŸ“Š',
+    icon: '\uD83D\uDCCA',
     description:
       'Automated online estimates lack nuance. A professional Comparative Market Analysis (CMA) evaluates recent local transfers, current market competition, and your home\'s unique features to set a target that attracts buyers rather than pushing them away.',
   },
   {
     title: 'The Power of a Sole Mandate',
-    icon: 'ðŸ¤',
+    icon: '\uD83E\uDD1D',
     description:
       'Unlike an open mandate where agents compete against each other (often pushing you to accept lower offers quickly), a sole mandate guarantees dedicated marketing budget, a single point of secure contact, and an agent working to get the highest price for you.',
   },
   {
     title: 'The Conveyancing Timeline',
-    icon: 'ðŸ—“ï¸',
+    icon: '\uD83D\uDDD3\uFE0F',
     description:
       'From signing the Offer to Purchase (OTP) to final Deeds Office registration via the new eDRS system, expect an 8 to 12-week journey. Samantha aligns with top conveyancing attorneys to track every milestone for you.',
   },
@@ -75,7 +75,7 @@ const financialItems = [
   {
     title: 'Capital Gains Tax (CGT)',
     description:
-      'If the property is your primary residence, you benefit from a significant SARS exclusion. The Primary Residence Exclusion is R2 Million â€” meaning the first R2M of your capital profit is exempt from CGT. For secondary properties or investment rentals, this exclusion does not apply.',
+      'If the property is your primary residence, you benefit from a significant SARS exclusion. The Primary Residence Exclusion is R2 Million — meaning the first R2M of your capital profit is exempt from CGT. For secondary properties or investment rentals, this exclusion does not apply.',
   },
   {
     title: 'Occupational Rent',
@@ -121,7 +121,7 @@ const guides = [
   },
   {
     title: 'First-Time Buyer\'s Complete Guide',
-    description: 'Step-by-step walkthrough of the buying process â€” from bond pre-approval to key handover, specifically tailored for the South African market.',
+    description: 'Step-by-step walkthrough of the buying process — from bond pre-approval to key handover, specifically tailored for the South African market.',
   },
   {
     title: '2026 Rental Legislative Framework',
@@ -129,7 +129,7 @@ const guides = [
   },
   {
     title: 'Gauteng to Cape Town Relocation Guide',
-    description: 'Everything semigrants need to know â€” neighborhood comparisons, school zones, municipal registration, and lifestyle adjustments.',
+    description: 'Everything semigrants need to know — neighborhood comparisons, school zones, municipal registration, and lifestyle adjustments.',
   },
 ];
 
@@ -138,12 +138,12 @@ export default function ResourcesPage() {
     <>
       <SEO
         title="Resources"
-        description="Essential property resources â€” buyer checklists, landlord compliance guides, Cape Town utility directories, and downloadable guides from Samantha Black."
+        description="Essential property resources — buyer checklists, landlord compliance guides, Cape Town utility directories, and downloadable guides from Samantha Black."
         path="/resources"
       />
 
       {/* Hero */}
-      <section className="bg-navy-800 py-16">
+      <section className="bg-teal-800 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-gold-400 font-medium">Resident &amp; Investor Resources</p>
           <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-white">
@@ -156,11 +156,11 @@ export default function ResourcesPage() {
       </section>
 
       {/* ===== BUYER TOOLS ===== */}
-      <section className="py-16 bg-sand-50">
+      <section className="py-16 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">Free Tools</span>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-navy-800">
+            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-teal-800">
               Property Tools on Just Property
             </h2>
             <p className="mt-3 text-[14px] text-gray-500 max-w-xl mx-auto">
@@ -183,7 +183,7 @@ export default function ResourcesPage() {
                 className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 p-5 hover:shadow-md hover:border-gold-200 transition-all text-center group"
               >
                 <span className="text-2xl">{tool.icon}</span>
-                <span className="text-[13px] font-medium text-navy-700 group-hover:text-gold-600 transition-colors">{tool.label}</span>
+                <span className="text-[13px] font-medium text-teal-700 group-hover:text-gold-600 transition-colors">{tool.label}</span>
                 <span className="text-[11px] text-gray-400">{tool.desc}</span>
               </a>
             ))}
@@ -195,16 +195,16 @@ export default function ResourcesPage() {
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-navy-800">Your Successful Sale Framework</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-teal-800">Your Successful Sale Framework</h2>
             <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
               Selling a home goes beyond placing a board outside. It requires strategic pricing, strict legal compliance, and smart financial planning.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {sellingFramework.map((item) => (
-              <div key={item.title} className="rounded-2xl bg-sand-50 border border-sand-200 p-8">
+              <div key={item.title} className="rounded-2xl bg-slate-50 border border-slate-200 p-8">
                 <span className="text-3xl mb-4 block">{item.icon}</span>
-                <h3 className="text-lg font-semibold text-navy-800 mb-3">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-teal-800 mb-3">{item.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -213,7 +213,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* ===== LEGAL & COMPLIANCE ===== */}
-      <section className="py-16 bg-navy-800 text-white">
+      <section className="py-16 bg-teal-800 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold">No Surprises: Navigating Property Law</h2>
@@ -225,7 +225,7 @@ export default function ResourcesPage() {
             {/* Legal Concepts */}
             <div className="space-y-6">
               {legalItems.map((item) => (
-                <div key={item.title} className="bg-navy-700/50 p-6 rounded-xl border border-navy-600">
+                <div key={item.title} className="bg-teal-700/50 p-6 rounded-xl border border-teal-600">
                   <h3 className="text-lg font-semibold text-gold-400 mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-300 leading-relaxed">{item.description}</p>
                 </div>
@@ -233,11 +233,11 @@ export default function ResourcesPage() {
             </div>
             {/* Compliance Certificates */}
             <div>
-              <h3 className="text-xl font-semibold mb-2 border-b border-navy-600 pb-2">Required Compliance Certificates (CoC)</h3>
+              <h3 className="text-xl font-semibold mb-2 border-b border-teal-600 pb-2">Required Compliance Certificates (CoC)</h3>
               <p className="text-sm text-gray-400 mb-6">Sellers are legally obligated to provide these certificates to the conveyancing attorney prior to registration.</p>
               <div className="space-y-4">
                 {complianceCertificates.map((cert) => (
-                  <div key={cert.title} className="bg-navy-700/50 p-5 rounded-xl border border-navy-600">
+                  <div key={cert.title} className="bg-teal-700/50 p-5 rounded-xl border border-teal-600">
                     <h4 className="font-semibold text-white mb-1">{cert.title}</h4>
                     <p className="text-sm text-gray-400">{cert.description}</p>
                   </div>
@@ -249,10 +249,10 @@ export default function ResourcesPage() {
       </section>
 
       {/* ===== FINANCIAL PLANNING ===== */}
-      <section className="py-16 bg-sand-50">
+      <section className="py-16 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-navy-800">Understand Your Bottom Line</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-teal-800">Understand Your Bottom Line</h2>
             <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
               Don't let hidden costs erode your capital. Be prepared for the financial realities of selling property in 2026.
             </p>
@@ -260,7 +260,7 @@ export default function ResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {financialItems.map((item) => (
               <div key={item.title} className="rounded-2xl bg-white p-8 shadow-md border-t-4 border-gold-400">
-                <h3 className="text-lg font-semibold text-navy-800 mb-4">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-teal-800 mb-4">{item.title}</h3>
                 {item.items ? (
                   <ul className="space-y-3 text-sm text-gray-600">
                     {item.items.map((li, i) => (
@@ -273,7 +273,7 @@ export default function ResourcesPage() {
                 ) : (
                   <>
                     {item.title === 'Capital Gains Tax (CGT)' && (
-                      <div className="bg-sand-50 p-4 rounded-lg mb-4 text-center">
+                      <div className="bg-slate-50 p-4 rounded-lg mb-4 text-center">
                         <p className="text-xs uppercase tracking-wider text-gray-500">Primary Residence Exclusion</p>
                         <p className="text-2xl font-bold text-gold-500">R2 Million</p>
                       </div>
@@ -290,14 +290,14 @@ export default function ResourcesPage() {
       {/* Downloadable Guides */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-navy-800 mb-8">Expert Guides</h2>
+          <h2 className="text-2xl font-bold text-teal-800 mb-8">Expert Guides</h2>
           <p className="text-gray-600 mb-8 max-w-2xl">
-            Request any of these comprehensive guides â€” enter your email and I'll send the PDF directly to your inbox.
+            Request any of these comprehensive guides — enter your email and I'll send the PDF directly to your inbox.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {guides.map((guide) => (
-              <div key={guide.title} className="rounded-2xl bg-sand-50 border border-sand-200 p-6">
-                <h3 className="text-lg font-semibold text-navy-800 mb-2">
+              <div key={guide.title} className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+                <h3 className="text-lg font-semibold text-teal-800 mb-2">
                   {guide.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -319,11 +319,11 @@ export default function ResourcesPage() {
       </section>
 
       {/* Buyer Checklist */}
-      <section className="py-16 bg-sand-50">
+      <section className="py-16 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold text-navy-800 mb-2">
+              <h2 className="text-2xl font-bold text-teal-800 mb-2">
                 Cape Town Property Acquisition Checklist
               </h2>
               <p className="text-gray-600 mb-6">
@@ -332,7 +332,7 @@ export default function ResourcesPage() {
               <ol className="space-y-3">
                 {buyerChecklist.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy-800 text-xs font-bold text-white">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-800 text-xs font-bold text-white">
                       {i + 1}
                     </span>
                     {item}
@@ -342,7 +342,7 @@ export default function ResourcesPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-navy-800 mb-2">
+              <h2 className="text-2xl font-bold text-teal-800 mb-2">
                 2026 Landlord Compliance Checklist
               </h2>
               <p className="text-gray-600 mb-6">
@@ -366,7 +366,7 @@ export default function ResourcesPage() {
       {/* Utility & Vendor Directory */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-navy-800 mb-2">
+          <h2 className="text-2xl font-bold text-teal-800 mb-2">
             Cape Town Utility &amp; Vendor Directory
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl">
@@ -375,13 +375,13 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Municipal Services */}
-            <div className="rounded-2xl bg-sand-50 border border-sand-200 p-6">
-              <div className="h-10 w-10 rounded-lg bg-navy-800 flex items-center justify-center mb-4">
+            <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+              <div className="h-10 w-10 rounded-lg bg-teal-800 flex items-center justify-center mb-4">
                 <svg className="h-5 w-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-navy-800 mb-2">Municipal Services</h3>
+              <h3 className="text-lg font-semibold text-teal-800 mb-2">Municipal Services</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>
                   <a href="https://www.capetown.gov.za/Family%20and%20home/Meet-the-city/City-eservices" target="_blank" rel="noopener noreferrer" className="text-gold-500 hover:underline">
@@ -395,13 +395,13 @@ export default function ResourcesPage() {
             </div>
 
             {/* Energy & Solar */}
-            <div className="rounded-2xl bg-sand-50 border border-sand-200 p-6">
-              <div className="h-10 w-10 rounded-lg bg-navy-800 flex items-center justify-center mb-4">
+            <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+              <div className="h-10 w-10 rounded-lg bg-teal-800 flex items-center justify-center mb-4">
                 <svg className="h-5 w-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-navy-800 mb-2">Solar &amp; Energy</h3>
+              <h3 className="text-lg font-semibold text-teal-800 mb-2">Solar &amp; Energy</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>City-approved solar PV installers directory</li>
                 <li>Inverter and battery backup solutions</li>
@@ -414,13 +414,13 @@ export default function ResourcesPage() {
             </div>
 
             {/* Property Transfer */}
-            <div className="rounded-2xl bg-sand-50 border border-sand-200 p-6">
-              <div className="h-10 w-10 rounded-lg bg-navy-800 flex items-center justify-center mb-4">
+            <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+              <div className="h-10 w-10 rounded-lg bg-teal-800 flex items-center justify-center mb-4">
                 <svg className="h-5 w-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-navy-800 mb-2">Transfer &amp; Compliance</h3>
+              <h3 className="text-lg font-semibold text-teal-800 mb-2">Transfer &amp; Compliance</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>Electrical Compliance Certificates (CoC)</li>
                 <li>Plumbing Certificates of Compliance</li>
@@ -434,9 +434,9 @@ export default function ResourcesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-sand-50">
+      <section className="py-16 bg-slate-50">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-navy-800 mb-3">
+          <h2 className="text-2xl font-bold text-teal-800 mb-3">
             Need Personalised Guidance?
           </h2>
           <p className="text-gray-600 mb-8">
@@ -445,7 +445,7 @@ export default function ResourcesPage() {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-6 py-2.5 text-[13px] font-semibold text-navy-900 hover:bg-gold-400 transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-6 py-2.5 text-[13px] font-semibold text-teal-900 hover:bg-gold-400 transition-colors"
           >
             Book a Consultation
           </Link>

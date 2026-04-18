@@ -14,14 +14,14 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        description="Samantha Black â€” Property Practitioner, Just Property Cape Town. Luxury rentals, residential sales, and expert guidance across the Atlantic Seaboard, City Bowl, Parklands, and beyond."
+        description="Samantha Black — Property Practitioner, Just Property Cape Town. Luxury rentals, residential sales, and expert guidance across the Atlantic Seaboard, City Bowl, Parklands, and beyond."
         path="/"
       />
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[92vh] flex items-center bg-navy-900 overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-center bg-teal-900 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/40 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-900 via-teal-900/90 to-teal-900/70 z-10" />
           <img
             src="/images/Free_Property_Valuation.jpeg"
             alt="Luxury Cape Town property with Table Mountain"
@@ -30,19 +30,32 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text */}
+          {/* Portrait — top right */}
+          <div className="hidden lg:block absolute top-0 right-8 animate-fade-in-delay">
+            <div className="w-44 h-52 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+              <img
+                src="/images/Samantha_Profile_Picture.jpeg"
+                alt="Samantha Black — Property Practitioner"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+            <div className="absolute -bottom-3 -left-3 rounded-lg bg-white px-3 py-1.5 shadow-lg">
+              <p className="text-[11px] font-semibold text-teal-800">Experienced</p>
+              <p className="text-[9px] text-gray-500 uppercase tracking-wider">Property Practitioner</p>
+            </div>
+          </div>
+
+          <div className="max-w-2xl">
             <div className="animate-fade-in">
               <span className="inline-block text-[11px] uppercase tracking-[0.25em] text-gold-400 font-medium mb-5">
                 Just Property Cape Town
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
                 Find Your Place<br />
                 <span className="text-gold-400">in Cape Town</span>
               </h1>
               <p className="mt-5 max-w-md text-[15px] text-gray-300 leading-relaxed">
-                Expert guidance from listing to Deeds Office registration. Whether you're
-                buying, selling, or renting â€” navigate the market with confidence.
+                Experienced Property Practitioner focused on the Cape Town Atlantic Seaboard and City Bowl.
               </p>
 
               {/* Quick Actions */}
@@ -51,7 +64,7 @@ export default function HomePage() {
                   href={jp.forSale()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-5 py-3 text-[13px] font-semibold text-navy-900 hover:bg-gold-400 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-5 py-3 text-[13px] font-semibold text-teal-900 hover:bg-gold-400 transition-colors"
                 >
                   Browse For Sale
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
@@ -88,27 +101,11 @@ export default function HomePage() {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <svg className="h-4 w-4 text-gold-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-                  {contact.yearsExperience}+ Years
+                  Experienced Practitioner
                 </span>
               </div>
             </div>
 
-            {/* Right: Portrait */}
-            <div className="hidden lg:flex justify-end animate-slide-up-delay">
-              <div className="relative">
-                <div className="w-80 h-96 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-                  <img
-                    src="/images/Samantha_Profile_Picture.jpeg"
-                    alt="Samantha Black â€” Property Practitioner"
-                    className="h-full w-full object-cover object-top"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -left-4 rounded-xl bg-white px-5 py-3 shadow-lg">
-                  <p className="text-xl font-bold text-navy-800">{contact.yearsExperience}+</p>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-wider">Years Experience</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -118,7 +115,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">How I Can Help</span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-navy-800">
+            <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-teal-800">
               Seamless Solutions for Every Need
             </h2>
           </div>
@@ -157,10 +154,10 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="group rounded-2xl border border-gray-100 bg-white p-8 hover:shadow-lg hover:border-gold-200 transition-all duration-300"
               >
-                <div className="h-12 w-12 rounded-xl bg-navy-50 text-navy-600 flex items-center justify-center group-hover:bg-gold-50 group-hover:text-gold-600 transition-colors">
+                <div className="h-12 w-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center group-hover:bg-gold-50 group-hover:text-gold-600 transition-colors">
                   {service.icon}
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-navy-800">{service.title}</h3>
+                <h3 className="mt-5 text-lg font-semibold text-teal-800">{service.title}</h3>
                 <p className="mt-2 text-[14px] text-gray-500 leading-relaxed">{service.desc}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-medium text-gold-500 group-hover:text-gold-600">
                   Explore
@@ -173,21 +170,21 @@ export default function HomePage() {
       </section>
 
       {/* ===== BUYER TOOLS ===== */}
-      <section className="py-16 bg-sand-50">
+      <section className="py-16 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">Free Tools</span>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-navy-800">
+            <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-teal-800">
               Property Tools &amp; Resources
             </h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: 'Bond Calculator', href: jp.calculators, icon: 'ðŸ§®' },
-              { label: 'Free Valuation', href: jp.freeValuation, icon: 'ðŸ“Š' },
-              { label: 'Email Alerts', href: jp.emailAlerts, icon: 'ðŸ””' },
-              { label: 'Area Profiles', href: jp.areaProfiles, icon: 'ðŸ“' },
+              { label: 'Bond Calculator', href: jp.calculators, icon: '\uD83E\uDDEE' },
+              { label: 'Free Valuation', href: jp.freeValuation, icon: '\uD83D\uDCCA' },
+              { label: 'Email Alerts', href: jp.emailAlerts, icon: '\uD83D\uDD14' },
+              { label: 'Area Profiles', href: jp.areaProfiles, icon: '\uD83D\uDCCD' },
             ].map((tool) => (
               <a
                 key={tool.label}
@@ -197,7 +194,7 @@ export default function HomePage() {
                 className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 p-5 hover:shadow-md hover:border-gold-200 transition-all text-center group"
               >
                 <span className="text-2xl">{tool.icon}</span>
-                <span className="text-[13px] font-medium text-navy-700 group-hover:text-gold-600 transition-colors">{tool.label}</span>
+                <span className="text-[13px] font-medium text-teal-700 group-hover:text-gold-600 transition-colors">{tool.label}</span>
               </a>
             ))}
           </div>
@@ -209,7 +206,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">Explore Cape Town</span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-navy-800">
+            <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-teal-800">
               Discover Top Neighborhoods
             </h2>
           </div>
@@ -233,11 +230,11 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="py-20 bg-sand-50">
+      <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">Testimonials</span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-navy-800">
+            <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-teal-800">
               Trusted by Homeowners Across Cape Town
             </h2>
           </div>
@@ -251,12 +248,12 @@ export default function HomePage() {
       </section>
 
       {/* ===== REFERRAL CTA ===== */}
-      <section className="relative py-20 bg-navy-900 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-transparent z-10" />
+      <section className="relative py-20 bg-teal-900 overflow-hidden min-h-[360px]">
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/95 via-teal-900/80 to-teal-900/30 z-10" />
         <img
           src="/images/Comission for leads.jpeg"
           alt="Referral programme"
-          className="absolute inset-0 h-full w-full object-cover object-right"
+          className="absolute inset-0 h-full w-full object-contain object-right"
         />
         <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg">
@@ -273,7 +270,7 @@ export default function HomePage() {
                 href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent("Hi Samantha, I'd like to learn more about your referral programme.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-5 py-2.5 text-[13px] font-semibold text-navy-900 hover:bg-gold-400 transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-gold-500 px-5 py-2.5 text-[13px] font-semibold text-teal-900 hover:bg-gold-400 transition-colors"
               >
                 Get Details
               </a>
@@ -292,7 +289,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-navy-800">Get in Touch</h2>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-teal-800">Get in Touch</h2>
             <p className="mt-3 text-[14px] text-gray-500">
               Send a message and I'll respond within 24 hours.
             </p>

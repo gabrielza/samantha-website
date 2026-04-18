@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import contact from '../../data/contact';
 
 export default function ContactForm({ formName = 'contact', propertyTitle = '', className = '' }) {
@@ -26,7 +26,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
         <svg className="mx-auto h-12 w-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <h3 className="mt-4 text-xl font-semibold text-navy-800">Message Sent</h3>
+        <h3 className="mt-4 text-xl font-semibold text-teal-800">Message Sent</h3>
         <p className="mt-2 text-sm text-gray-600">
           Thank you for reaching out. Samantha will respond within 24 hours.
         </p>
@@ -54,7 +54,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
 
       <div className="space-y-4">
         <div>
-          <label htmlFor={`${formName}-name`} className="block text-sm font-medium text-navy-700 mb-1">
+          <label htmlFor={`${formName}-name`} className="block text-sm font-medium text-teal-700 mb-1">
             Full Name
           </label>
           <input
@@ -68,7 +68,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
         </div>
 
         <div>
-          <label htmlFor={`${formName}-email`} className="block text-sm font-medium text-navy-700 mb-1">
+          <label htmlFor={`${formName}-email`} className="block text-sm font-medium text-teal-700 mb-1">
             Email Address
           </label>
           <input
@@ -82,7 +82,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
         </div>
 
         <div>
-          <label htmlFor={`${formName}-phone`} className="block text-sm font-medium text-navy-700 mb-1">
+          <label htmlFor={`${formName}-phone`} className="block text-sm font-medium text-teal-700 mb-1">
             Contact Number
           </label>
           <input
@@ -95,7 +95,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
         </div>
 
         <div>
-          <label htmlFor={`${formName}-message`} className="block text-sm font-medium text-navy-700 mb-1">
+          <label htmlFor={`${formName}-message`} className="block text-sm font-medium text-teal-700 mb-1">
             Message
           </label>
           <textarea
@@ -109,7 +109,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-navy-800 px-6 py-2.5 text-[14px] font-semibold text-white hover:bg-navy-700 transition-colors"
+          className="w-full rounded-lg bg-teal-800 px-6 py-2.5 text-[14px] font-semibold text-white hover:bg-teal-700 transition-colors"
         >
           Send Message
         </button>

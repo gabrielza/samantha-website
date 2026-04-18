@@ -7,7 +7,7 @@ const itinerary = [
     title: 'Sunrise at Camps Bay Beach',
     area: 'Camps Bay',
     description:
-      'Begin your Cape Town day with a barefoot walk along the iconic Camps Bay beachfront. The early morning light illuminates the Twelve Apostles mountain range in a warm golden glow â€” the perfect moment to experience why this is one of the world\'s most photographed coastlines.',
+      'Begin your Cape Town day with a barefoot walk along the iconic Camps Bay beachfront. The early morning light illuminates the Twelve Apostles mountain range in a warm golden glow — the perfect moment to experience why this is one of the world\'s most photographed coastlines.',
     propertyNote: 'Explore beachfront villas and apartments from R 8M',
   },
   {
@@ -31,7 +31,7 @@ const itinerary = [
     title: 'Lunch at the V&A Waterfront',
     area: 'V&A Waterfront',
     description:
-      'Descend from the mountain and head to the Victoria & Alfred Waterfront â€” Cape Town\'s premier dining and lifestyle destination. Choose from world-class seafood restaurants overlooking the working harbour, with Table Mountain as your backdrop.',
+      'Descend from the mountain and head to the Victoria & Alfred Waterfront — Cape Town\'s premier dining and lifestyle destination. Choose from world-class seafood restaurants overlooking the working harbour, with Table Mountain as your backdrop.',
     propertyNote: 'Waterfront Marina apartments from R 5M',
   },
   {
@@ -39,7 +39,7 @@ const itinerary = [
     title: 'Drive the Atlantic Seaboard',
     area: 'Atlantic Seaboard',
     description:
-      'Take the scenic coastal drive from Sea Point through Clifton and Camps Bay, then continue along Victoria Road toward Llandudno and Hout Bay. This is the Cape Town "Riviera" â€” each curve reveals another breathtaking ocean vista and exclusive residential enclave.',
+      'Take the scenic coastal drive from Sea Point through Clifton and Camps Bay, then continue along Victoria Road toward Llandudno and Hout Bay. This is the Cape Town "Riviera" — each curve reveals another breathtaking ocean vista and exclusive residential enclave.',
     propertyNote: 'Atlantic Seaboard properties from R 10M to R 120M+',
   },
   {
@@ -47,7 +47,7 @@ const itinerary = [
     title: 'Constantia Wine Tasting',
     area: 'Constantia',
     description:
-      'Turn inland to the historic Constantia winelands â€” the oldest wine-producing region in the southern hemisphere. Visit Groot Constantia, Beau Constantia, or Eagles\' Nest for estate tastings amidst vineyard views and oak-lined avenues. This is where Cape Town\'s heritage meets refined living.',
+      'Turn inland to the historic Constantia winelands — the oldest wine-producing region in the southern hemisphere. Visit Groot Constantia, Beau Constantia, or Eagles\' Nest for estate tastings amidst vineyard views and oak-lined avenues. This is where Cape Town\'s heritage meets refined living.',
     propertyNote: 'Heritage estates on expansive grounds from R 8M',
   },
   {
@@ -55,7 +55,7 @@ const itinerary = [
     title: 'Sunset Sundowners in Bantry Bay',
     area: 'Bantry Bay',
     description:
-      'End your day at one of Bantry Bay\'s northwest-facing terraces, watching the Atlantic Ocean turn gold as the sun sets. Protected from the south-easter wind, this is Cape Town\'s ultimate sunset sanctuary â€” and you\'ll understand why residents never tire of this view.',
+      'End your day at one of Bantry Bay\'s northwest-facing terraces, watching the Atlantic Ocean turn gold as the sun sets. Protected from the south-easter wind, this is Cape Town\'s ultimate sunset sanctuary — and you\'ll understand why residents never tire of this view.',
     propertyNote: 'Sunset apartments in Bantry Bay from R 10M',
   },
 ];
@@ -65,12 +65,12 @@ export default function ItineraryPage() {
     <>
       <SEO
         title="A Full Day Out in Cape Town"
-        description="An interactive itinerary exploring Cape Town's finest locations â€” from Camps Bay beach to Constantia winelands, with property insights along the way."
+        description="An interactive itinerary exploring Cape Town's finest locations — from Camps Bay beach to Constantia winelands, with property insights along the way."
         path="/cape-town-day-out"
       />
 
       {/* Hero */}
-      <section className="relative bg-navy-900 py-20 overflow-hidden">
+      <section className="relative bg-teal-900 py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="h-full w-full bg-gradient-to-br from-gold-400/30 to-transparent" />
         </div>
@@ -81,7 +81,7 @@ export default function ItineraryPage() {
           </h1>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
             Discover the Cape Peninsula through the eyes of a local expert. This curated itinerary 
-            guides you through Cape Town's most iconic locations â€” with property insights woven into 
+            guides you through Cape Town's most iconic locations — with property insights woven into 
             every stop for prospective buyers.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function ItineraryPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-sand-200 md:left-1/2 md:-translate-x-0.5" />
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-slate-200 md:left-1/2 md:-translate-x-0.5" />
 
             <div className="space-y-12">
               {itinerary.map((stop, index) => (
@@ -104,27 +104,27 @@ export default function ItineraryPage() {
                 >
                   {/* Timeline Node */}
                   <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-navy-800 text-xs font-bold text-gold-400 border-4 border-white shadow-md">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-800 text-xs font-bold text-gold-400 border-4 border-white shadow-md">
                       {stop.time}
                     </div>
                   </div>
 
                   {/* Content Card */}
                   <div className={`ml-20 md:ml-0 md:w-[calc(50%-3rem)] ${index % 2 === 0 ? '' : 'md:ml-auto'}`}>
-                    <div className="rounded-2xl bg-sand-50 border border-sand-200 p-6 hover:shadow-md transition-shadow">
+                    <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6 hover:shadow-md transition-shadow">
                       <span className="text-xs uppercase tracking-wider text-gold-500 font-medium">
                         {stop.area}
                       </span>
-                      <h3 className="mt-1 text-xl font-semibold text-navy-800">
+                      <h3 className="mt-1 text-xl font-semibold text-teal-800">
                         {stop.title}
                       </h3>
                       <p className="mt-3 text-sm text-gray-700 leading-relaxed">
                         {stop.description}
                       </p>
                       {stop.propertyNote && (
-                        <div className="mt-4 rounded-lg bg-navy-800/5 px-4 py-3 border-l-4 border-gold-400">
-                          <p className="text-xs font-medium text-navy-700">
-                            ðŸ¡ {stop.propertyNote}
+                        <div className="mt-4 rounded-lg bg-teal-800/5 px-4 py-3 border-l-4 border-gold-400">
+                          <p className="text-xs font-medium text-teal-700">
+                            {'\uD83C\uDFE1'} {stop.propertyNote}
                           </p>
                           <Link
                             to="/properties"
@@ -144,13 +144,13 @@ export default function ItineraryPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-sand-50">
+      <section className="py-16 bg-slate-50">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-navy-800 mb-3">
+          <h2 className="text-2xl font-bold text-teal-800 mb-3">
             Ready to Make Cape Town Home?
           </h2>
           <p className="text-gray-600 mb-8">
-            This itinerary only scratches the surface. Let me show you the Cape Town that residents love â€” 
+            This itinerary only scratches the surface. Let me show you the Cape Town that residents love — 
             and help you find the perfect property to call your own.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -162,7 +162,7 @@ export default function ItineraryPage() {
             </Link>
             <Link
               to="/properties"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-navy-800 px-8 py-3 text-sm font-semibold text-navy-800 hover:bg-navy-800 hover:text-white transition-all"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-teal-800 px-8 py-3 text-sm font-semibold text-teal-800 hover:bg-teal-800 hover:text-white transition-all"
             >
               Browse Properties
             </Link>

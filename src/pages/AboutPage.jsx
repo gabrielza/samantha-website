@@ -1,4 +1,4 @@
-import SEO from '../components/common/SEO';
+﻿import SEO from '../components/common/SEO';
 import TestimonialCard from '../components/common/TestimonialCard';
 import ContactForm from '../components/common/ContactForm';
 import contact from '../data/contact';
@@ -14,7 +14,7 @@ export default function AboutPage() {
       />
 
       {/* Hero */}
-      <section className="bg-navy-800 py-16">
+      <section className="bg-teal-800 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-gold-400 font-medium">About</p>
           <h1 className="mt-2 text-3xl sm:text-4xl font-semibold text-white">
@@ -38,8 +38,8 @@ export default function AboutPage() {
               </div>
               {/* Credentials overlay */}
               <div className="absolute -bottom-6 -right-6 rounded-xl bg-white p-5 shadow-lg">
-                <p className="text-2xl font-bold text-navy-800">{contact.yearsExperience}+</p>
-                <p className="text-xs text-gray-500 uppercase tracking-wider">Years of Market Expertise</p>
+                <p className="text-sm font-semibold text-teal-800">Experienced</p>
+                <p className="text-xs text-gray-500 uppercase tracking-wider">Property Practitioner</p>
               </div>
             </div>
 
@@ -48,14 +48,14 @@ export default function AboutPage() {
               <p className="text-sm uppercase tracking-[0.2em] text-gold-500 font-medium">
                 Atlantic Seaboard &middot; City Bowl &middot; Northern Suburbs
               </p>
-              <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-navy-800">
+              <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-teal-800">
                 Specialising in Luxury Rentals &amp; Prime Residential Sales
               </h2>
 
               <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   As a proud representative of <strong>Just Property</strong> in Cape Town, I believe that
-                  selling or buying a home shouldn't be a source of anxiety. With over {contact.yearsExperience} years 
+                  selling or buying a home shouldn't be a source of anxiety. As an experienced practitioner
                   navigating Cape Town's dynamic property landscape, my role is to bridge the gap between complex 
                   property law and your financial goals.
                 </p>
@@ -82,14 +82,14 @@ export default function AboutPage() {
                     <svg className="h-5 w-5 text-gold-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-navy-700 font-medium">{spec}</span>
+                    <span className="text-teal-700 font-medium">{spec}</span>
                   </div>
                 ))}
               </div>
 
               {/* Affiliations */}
-              <div className="mt-8 rounded-xl bg-sand-50 p-5 border border-sand-200">
-                <h3 className="text-sm font-semibold text-navy-800 mb-2">Professional Affiliations</h3>
+              <div className="mt-8 rounded-xl bg-slate-50 p-5 border border-slate-200">
+                <h3 className="text-sm font-semibold text-teal-800 mb-2">Professional Affiliations</h3>
                 <ul className="space-y-1">
                   {contact.affiliations.map((a) => (
                     <li key={a} className="text-sm text-gray-600">{a}</li>
@@ -111,13 +111,13 @@ export default function AboutPage() {
                 </a>
                 <a
                   href={`tel:${contact.phoneRaw}`}
-                  className="inline-flex items-center gap-2 rounded-lg bg-navy-800 px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-navy-700 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg bg-teal-800 px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-teal-700 transition-colors"
                 >
                   Call Samantha
                 </a>
                 <a
                   href={`mailto:${contact.email}?subject=${encodeURIComponent('Property Inquiry via SamanthaBlack.com')}`}
-                  className="inline-flex items-center gap-2 rounded-lg border border-navy-800 px-5 py-2.5 text-[13px] font-semibold text-navy-800 hover:bg-navy-800 hover:text-white transition-all"
+                  className="inline-flex items-center gap-2 rounded-lg border border-teal-800 px-5 py-2.5 text-[13px] font-semibold text-teal-800 hover:bg-teal-800 hover:text-white transition-all"
                 >
                   Send Email
                 </a>
@@ -128,11 +128,11 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-sand-50">
+      <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-[0.2em] text-gold-500 font-medium">Social Proof</p>
-            <h2 className="mt-2 text-3xl font-semibold text-navy-800">
+            <h2 className="mt-2 text-3xl font-semibold text-teal-800">
               What My Clients Say
             </h2>
           </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
       {/* Contact Form */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-semibold text-navy-800 mb-3">Let's Connect</h2>
+          <h2 className="text-3xl font-semibold text-teal-800 mb-3">Let's Connect</h2>
           <p className="text-gray-600 mb-10">
             Whether you're buying, selling, renting, or investing — I'd love to hear from you.
           </p>

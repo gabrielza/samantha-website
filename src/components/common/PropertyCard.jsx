@@ -18,7 +18,7 @@ export default function PropertyCard({ property }) {
           loading="lazy"
         />
         {/* Type Badge */}
-        <span className="absolute top-3 left-3 rounded-full bg-navy-800/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+        <span className="absolute top-3 left-3 rounded-full bg-teal-800/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
           {property.type === 'rental' ? 'To Let' : 'For Sale'}
         </span>
         {/* Price */}
@@ -29,7 +29,7 @@ export default function PropertyCard({ property }) {
 
       {/* Content */}
       <div className="p-5">
-        <h3 className="text-lg font-semibold text-navy-800 group-hover:text-gold-500 transition-colors line-clamp-2">
+        <h3 className="text-lg font-semibold text-teal-800 group-hover:text-gold-500 transition-colors line-clamp-2">
           {property.title}
         </h3>
         <p className="mt-1 text-sm text-gray-500">{property.location}</p>
@@ -46,7 +46,7 @@ export default function PropertyCard({ property }) {
           </span>
           <span className="flex items-center gap-1">
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m10.5-6v4.5m0-4.5h-4.5m4.5 0L15 9m-10.5 6v4.5m0-4.5h4.5m-4.5 4.5L9 15m10.5 0v4.5m0-4.5h-4.5m4.5 4.5L15 15" /></svg>
-            {property.sqm} mÂ²
+            {property.sqm} m²
           </span>
         </div>
 
@@ -56,7 +56,7 @@ export default function PropertyCard({ property }) {
             {property.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-sand-100 px-2.5 py-0.5 text-xs font-medium text-navy-700"
+                className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-teal-700"
               >
                 {tag}
               </span>

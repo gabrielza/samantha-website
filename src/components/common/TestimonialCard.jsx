@@ -1,4 +1,4 @@
-export default function TestimonialCard({ testimonial }) {
+﻿export default function TestimonialCard({ testimonial }) {
   return (
     <div className="rounded-xl bg-white border border-gray-100 p-6 hover:shadow-md transition-shadow">
       <div className="flex gap-0.5 mb-3">
@@ -12,7 +12,7 @@ export default function TestimonialCard({ testimonial }) {
         &ldquo;{testimonial.text}&rdquo;
       </blockquote>
       <div className="mt-4 pt-4 border-t border-gray-50">
-        <p className="text-[13px] font-semibold text-navy-800">{testimonial.name}</p>
+        <p className="text-[13px] font-semibold text-teal-800">{testimonial.name}</p>
         <p className="text-[11px] text-gray-400">{testimonial.location}</p>
       </div>
     </div>
