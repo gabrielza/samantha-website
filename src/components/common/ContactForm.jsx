@@ -26,7 +26,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
         <svg className="mx-auto h-12 w-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <h3 className="mt-4 font-heading text-xl font-semibold text-navy-800">Message Sent</h3>
+        <h3 className="mt-4 text-xl font-semibold text-navy-800">Message Sent</h3>
         <p className="mt-2 text-sm text-gray-600">
           Thank you for reaching out. Samantha will respond within 24 hours.
         </p>
@@ -62,7 +62,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
             id={`${formName}-name`}
             name="name"
             required
-            className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
+            className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[14px] outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
             placeholder="Your full name"
           />
         </div>
@@ -109,7 +109,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-gold-500 px-6 py-3 text-sm font-semibold text-white hover:bg-gold-600 transition-colors"
+          className="w-full rounded-lg bg-navy-800 px-6 py-2.5 text-[14px] font-semibold text-white hover:bg-navy-700 transition-colors"
         >
           Send Message
         </button>

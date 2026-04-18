@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 
 export default function PropertyCard({ property }) {
   const placeholder = `https://placehold.co/600x400/1B2A4A/C9A96E?text=${encodeURIComponent(property.suburb)}`;
@@ -29,7 +29,7 @@ export default function PropertyCard({ property }) {
 
       {/* Content */}
       <div className="p-5">
-        <h3 className="font-heading text-lg font-semibold text-navy-800 group-hover:text-gold-500 transition-colors line-clamp-2">
+        <h3 className="text-lg font-semibold text-navy-800 group-hover:text-gold-500 transition-colors line-clamp-2">
           {property.title}
         </h3>
         <p className="mt-1 text-sm text-gray-500">{property.location}</p>
@@ -46,7 +46,7 @@ export default function PropertyCard({ property }) {
           </span>
           <span className="flex items-center gap-1">
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m10.5-6v4.5m0-4.5h-4.5m4.5 0L15 9m-10.5 6v4.5m0-4.5h4.5m-4.5 4.5L9 15m10.5 0v4.5m0-4.5h-4.5m4.5 4.5L15 15" /></svg>
-            {property.sqm} m²
+            {property.sqm} mÂ²
           </span>
         </div>
 

@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+﻿import { useParams, Link } from 'react-router-dom';
 import SEO from '../components/common/SEO';
 import PropertyCard from '../components/common/PropertyCard';
 import ContactForm from '../components/common/ContactForm';
@@ -12,7 +12,7 @@ export default function NeighborhoodDetailPage() {
   if (!neighborhood) {
     return (
       <div className="py-32 text-center">
-        <h1 className="font-heading text-3xl font-bold text-navy-800">Neighborhood Not Found</h1>
+        <h1 className="text-3xl font-bold text-navy-800">Neighborhood Not Found</h1>
         <Link to="/neighborhoods" className="mt-6 inline-block text-gold-500 font-medium hover:underline">
           &larr; Back to Neighborhoods
         </Link>
@@ -27,7 +27,7 @@ export default function NeighborhoodDetailPage() {
   return (
     <>
       <SEO
-        title={`${neighborhood.name} — Neighborhood Guide`}
+        title={`${neighborhood.name} â€” Neighborhood Guide`}
         description={neighborhood.description.slice(0, 160)}
         path={`/neighborhoods/${neighborhood.slug}`}
       />
@@ -45,10 +45,10 @@ export default function NeighborhoodDetailPage() {
           <p className="text-sm uppercase tracking-[0.2em] text-gold-400 font-medium">
             {neighborhood.region}
           </p>
-          <h1 className="mt-2 font-heading text-3xl sm:text-4xl font-bold text-white">
+          <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-white">
             {neighborhood.name}
           </h1>
-          <p className="mt-2 text-lg text-gold-300 italic font-heading">{neighborhood.tagline}</p>
+          <p className="mt-2 text-lg text-gold-300 italic">{neighborhood.tagline}</p>
         </div>
       </section>
 
@@ -62,7 +62,7 @@ export default function NeighborhoodDetailPage() {
 
               {/* Highlights */}
               <div className="mt-10">
-                <h2 className="font-heading text-xl font-semibold text-navy-800 mb-4">Key Highlights</h2>
+                <h2 className="text-xl font-semibold text-navy-800 mb-4">Key Highlights</h2>
                 <ul className="space-y-3">
                   {neighborhood.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-3 text-gray-700">
@@ -78,7 +78,7 @@ export default function NeighborhoodDetailPage() {
               {/* Properties in Area */}
               {areaProperties.length > 0 && (
                 <div className="mt-12">
-                  <h2 className="font-heading text-xl font-semibold text-navy-800 mb-6">
+                  <h2 className="text-xl font-semibold text-navy-800 mb-6">
                     Available Properties in {neighborhood.region}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -95,7 +95,7 @@ export default function NeighborhoodDetailPage() {
               <div className="lg:sticky lg:top-24 space-y-6">
                 {/* Quick Facts */}
                 <div className="rounded-2xl bg-sand-50 p-6 border border-sand-200">
-                  <h3 className="font-heading text-lg font-semibold text-navy-800 mb-4">Quick Facts</h3>
+                  <h3 className="text-lg font-semibold text-navy-800 mb-4">Quick Facts</h3>
                   <dl className="space-y-3">
                     {[
                       { label: 'Price Range', value: neighborhood.priceRange },
@@ -113,7 +113,7 @@ export default function NeighborhoodDetailPage() {
 
                 {/* Contact */}
                 <div className="rounded-2xl bg-sand-50 p-6 border border-sand-200">
-                  <h3 className="font-heading text-lg font-semibold text-navy-800 mb-1">
+                  <h3 className="text-lg font-semibold text-navy-800 mb-1">
                     Interested in {neighborhood.name}?
                   </h3>
                   <p className="text-xs text-gray-500 mb-5">Get expert guidance on this area.</p>

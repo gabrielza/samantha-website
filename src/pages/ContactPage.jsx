@@ -15,7 +15,7 @@ export default function ContactPage() {
       <section className="bg-navy-800 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-gold-400 font-medium">Let's Connect</p>
-          <h1 className="mt-2 font-heading text-3xl sm:text-4xl font-bold text-white">
+          <h1 className="mt-2 text-3xl sm:text-4xl font-semibold text-white">
             Contact Samantha
           </h1>
           <p className="mt-3 text-gray-300 max-w-xl mx-auto">
@@ -31,7 +31,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left: Direct Contact */}
             <div>
-              <h2 className="font-heading text-2xl font-bold text-navy-800 mb-8">
+              <h2 className="text-2xl font-semibold text-navy-800 mb-8">
                 Instant Contact
               </h2>
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
 
               {/* Office Hours */}
               <div className="mt-10 rounded-2xl bg-sand-50 border border-sand-200 p-6">
-                <h3 className="font-heading text-lg font-semibold text-navy-800 mb-3">Availability</h3>
+                <h3 className="text-lg font-semibold text-navy-800 mb-3">Availability</h3>
                 <div className="space-y-2 text-sm text-gray-700">
                   <div className="flex justify-between">
                     <span>Monday – Friday</span>
@@ -107,7 +107,7 @@ export default function ContactPage() {
 
             {/* Right: Contact Form */}
             <div>
-              <h2 className="font-heading text-2xl font-bold text-navy-800 mb-2">
+              <h2 className="text-2xl font-semibold text-navy-800 mb-2">
                 Send a Message
               </h2>
               <p className="text-gray-600 mb-8">
