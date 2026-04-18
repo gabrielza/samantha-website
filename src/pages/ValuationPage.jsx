@@ -13,11 +13,16 @@ const propertyTypes = [
   'Other',
 ];
 
-const suburbs = [
-  'Sea Point', 'Green Point', 'Camps Bay', 'Clifton', 'Bantry Bay',
-  'Fresnaye', 'Three Anchor Bay', 'Cape Town City Centre', 'Gardens',
-  'Woodstock', 'Pinelands', 'Rondebosch', 'Claremont', 'Kenilworth',
-  'Constantia', 'Parklands', 'Other',
+const provinces = [
+  'Western Cape',
+  'Gauteng',
+  'KwaZulu-Natal',
+  'Eastern Cape',
+  'Free State',
+  'Limpopo',
+  'Mpumalanga',
+  'North West',
+  'Northern Cape',
 ];
 
 const reasons = [
@@ -145,17 +150,23 @@ export default function ValuationPage() {
                     <label htmlFor="val-street" className="block text-sm font-medium text-teal-700 mb-1">Street Address *</label>
                     <input type="text" id="val-street" name="street-address" required className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all" placeholder="e.g. 12 Beach Road" />
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="sm:col-span-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
                       <label htmlFor="val-suburb" className="block text-sm font-medium text-teal-700 mb-1">Suburb *</label>
-                      <select id="val-suburb" name="suburb" required className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all bg-white">
-                        <option value="">Select suburb</option>
-                        {suburbs.map((s) => <option key={s} value={s}>{s}</option>)}
-                      </select>
+                      <input type="text" id="val-suburb" name="suburb" required className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all" placeholder="e.g. Sea Point, Sandton, Umhlanga" />
                     </div>
                     <div>
-                      <label htmlFor="val-city" className="block text-sm font-medium text-teal-700 mb-1">City</label>
-                      <input type="text" id="val-city" name="city" defaultValue="Cape Town" className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all" />
+                      <label htmlFor="val-city" className="block text-sm font-medium text-teal-700 mb-1">City / Town *</label>
+                      <input type="text" id="val-city" name="city" required className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all" placeholder="e.g. Cape Town, Johannesburg" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="val-province" className="block text-sm font-medium text-teal-700 mb-1">Province *</label>
+                      <select id="val-province" name="province" required className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all bg-white">
+                        <option value="">Select province</option>
+                        {provinces.map((p) => <option key={p} value={p}>{p}</option>)}
+                      </select>
                     </div>
                     <div>
                       <label htmlFor="val-postal" className="block text-sm font-medium text-teal-700 mb-1">Postal Code</label>
