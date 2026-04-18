@@ -11,6 +11,13 @@ import ResourcesPage from './pages/ResourcesPage';
 import ItineraryPage from './pages/ItineraryPage';
 import ContactPage from './pages/ContactPage';
 import ValuationPage from './pages/ValuationPage';
+import CalculatorsPage from './pages/CalculatorsPage';
+import BondCalculatorPage from './pages/BondCalculatorPage';
+import TransferCostCalculatorPage from './pages/TransferCostCalculatorPage';
+import AffordabilityCalculatorPage from './pages/AffordabilityCalculatorPage';
+import SellerCalculatorPage from './pages/SellerCalculatorPage';
+import BuyersGuidePage from './pages/BuyersGuidePage';
+import SellersGuidePage from './pages/SellersGuidePage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -36,6 +43,13 @@ export default function App() {
           <Route path="/cape-town-day-out" element={<ItineraryPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/valuation" element={<ValuationPage />} />
+          <Route path="/calculators" element={<CalculatorsPage />} />
+          <Route path="/calculators/bond" element={<BondCalculatorPage />} />
+          <Route path="/calculators/transfer" element={<TransferCostCalculatorPage />} />
+          <Route path="/calculators/affordability" element={<AffordabilityCalculatorPage />} />
+          <Route path="/calculators/seller" element={<SellerCalculatorPage />} />
+          <Route path="/guides/buyers-guide" element={<BuyersGuidePage />} />
+          <Route path="/guides/sellers-guide" element={<SellersGuidePage />} />
         </Route>
       </Routes>
     </>

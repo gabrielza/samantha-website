@@ -62,8 +62,9 @@ export default function Footer() {
               <li><a href={jp.forSale()} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Residential For Sale</a></li>
               <li><a href={jp.toRent()} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Residential To Let</a></li>
               <li><Link to="/valuation" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Free Property Valuation</Link></li>
-              <li><a href={jp.calculators} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Bond Calculators</a></li>
-              <li><a href={jp.emailAlerts} target="_blank" rel="noopener noreferrer" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Property Email Alerts</a></li>
+              <li><Link to="/calculators" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Property Calculators</Link></li>
+              <li><Link to="/guides/buyers-guide" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Buyer's Guide</Link></li>
+              <li><Link to="/guides/sellers-guide" className="text-[13px] text-gray-400 hover:text-gold-400 transition-colors">Seller's Guide</Link></li>
             </ul>
           </div>
 

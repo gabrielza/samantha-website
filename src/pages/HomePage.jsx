@@ -79,6 +79,13 @@ export default function HomePage() {
                   Browse Rentals
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
                 </a>
+                <Link
+                  to="/valuation"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/25 px-5 py-3 text-[13px] font-semibold text-white hover:bg-white/10 transition-colors"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                  Sell My Property
+                </Link>
                 <a
                   href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappMessage)}`}
                   target="_blank"
@@ -214,10 +221,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: 'Bond Calculator', href: jp.calculators, icon: '\uD83E\uDDEE' },
+              { label: 'Bond Calculator', href: '/calculators/bond', icon: '\uD83E\uDDEE', internal: true },
               { label: 'Free Valuation', href: '/valuation', icon: '\uD83D\uDCCA', internal: true },
-              { label: 'Email Alerts', href: jp.emailAlerts, icon: '\uD83D\uDD14' },
-              { label: 'Area Profiles', href: jp.areaProfiles, icon: '\uD83D\uDCCD' },
+              { label: 'Buyer\'s Guide', href: '/guides/buyers-guide', icon: '\uD83D\uDCD6', internal: true },
+              { label: 'All Calculators', href: '/calculators', icon: '\uD83D\uDDA9\uFE0F', internal: true },
             ].map((tool) => {
               const Tag = tool.internal ? Link : 'a';
               const linkProps = tool.internal

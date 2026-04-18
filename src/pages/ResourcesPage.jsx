@@ -161,19 +161,19 @@ export default function ResourcesPage() {
           <div className="text-center mb-10">
             <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">Free Tools</span>
             <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-teal-800">
-              Property Tools on Just Property
+              Property Tools &amp; Calculators
             </h2>
             <p className="mt-3 text-[14px] text-gray-500 max-w-xl mx-auto">
-              Access bond calculators, free valuations, property alerts, and area profiles — powered by Just Property.
+              Free calculators, valuation tools, and guides — built for the South African property market.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              { label: 'Bond Calculator', desc: 'Estimate your monthly repayments', href: jp.calculators, icon: '🧮' },
+              { label: 'Bond Calculator', desc: 'Estimate your monthly repayments', href: '/calculators/bond', icon: '🧮', internal: true },
               { label: 'Free Valuation', desc: 'Know what your property is worth', href: '/valuation', icon: '📊', internal: true },
-              { label: 'Email Alerts', desc: 'Get notified of new listings', href: jp.emailAlerts, icon: '🔔' },
-              { label: 'Area Profiles', desc: 'Research any neighbourhood', href: jp.areaProfiles, icon: '📍' },
+              { label: 'Transfer Costs', desc: 'Full buyer cost breakdown', href: '/calculators/transfer', icon: '📄', internal: true },
+              { label: 'All Calculators', desc: 'Affordability, seller proceeds & more', href: '/calculators', icon: '🖩', internal: true },
             ].map((tool) => {
               const Tag = tool.internal ? Link : 'a';
               const linkProps = tool.internal
