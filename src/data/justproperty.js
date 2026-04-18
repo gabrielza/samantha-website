@@ -18,6 +18,10 @@ export const jp = {
   emailAlerts: `${BASE}/property-email-alerts/`,
   areaProfiles: `${BASE}/area-profiles/`,
 
+  // ── Samantha's profile & listings ──
+  agentProfile: `${BASE}/agents/samantha-black/90455/`,
+  agentListings: `${BASE}/results/agent/90455/`,
+
   // ── Corporate ──
   agents: `${BASE}/agents/`,
   offices: `${BASE}/offices/`,

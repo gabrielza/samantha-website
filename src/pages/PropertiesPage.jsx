@@ -1,4 +1,5 @@
 ﻿import SEO from '../components/common/SEO';
+import LiveListings from '../components/common/LiveListings';
 import ContactForm from '../components/common/ContactForm';
 import contact from '../data/contact';
 import jp, { suburbs } from '../data/justproperty';
@@ -27,8 +28,30 @@ export default function PropertiesPage() {
         </div>
       </section>
 
+      {/* My Active Listings */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-semibold text-teal-800">My Active Listings</h2>
+            <p className="mt-2 text-[14px] text-gray-500">Properties I currently have available for sale and to let.</p>
+          </div>
+          <LiveListings limit={12} />
+          <div className="mt-8 text-center">
+            <a
+              href={jp.agentListings}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-gold-500 hover:text-gold-600"
+            >
+              View All on Just Property
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Search */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-14">
             <a

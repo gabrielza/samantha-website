@@ -1,5 +1,6 @@
 ﻿import { Link } from 'react-router-dom';
 import SEO from '../components/common/SEO';
+import LiveListings from '../components/common/LiveListings';
 import NeighborhoodCard from '../components/common/NeighborhoodCard';
 import TestimonialCard from '../components/common/TestimonialCard';
 import ContactForm from '../components/common/ContactForm';
@@ -169,8 +170,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== LIVE LISTINGS ===== */}
+      <section className="py-20 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">Live from Just Property</span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-semibold text-teal-800">
+              My Active Listings
+            </h2>
+            <p className="mt-3 max-w-lg mx-auto text-[14px] text-gray-500">
+              Browse my current properties available for sale and to let across Cape Town.
+            </p>
+          </div>
+          <LiveListings limit={8} />
+          <div className="mt-10 text-center">
+            <a
+              href={jp.agentListings}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-gold-500 hover:text-gold-600"
+            >
+              View All My Listings on Just Property
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ===== BUYER TOOLS ===== */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-[11px] uppercase tracking-[0.2em] text-gold-500 font-medium">Free Tools</span>
