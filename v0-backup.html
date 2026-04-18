@@ -1,0 +1,722 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samantha Black | Property Practitioner | Just Property Cape Town</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config for Brand Colors & Font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#7AB800', /* Signature Green */
+                            greenDark: '#5e8c00',
+                            onyx: '#1A1A1A', /* Onyx Black */
+                            slate: '#4A4A4A', /* Slate Gray */
+                            pearl: '#F7F7F9', /* Pearl Gray / Off-white */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Interactive Effects */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-slate bg-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-brand-green rounded flex items-center justify-center text-white font-bold text-xl">
+                        SB
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-brand-onyx text-lg leading-tight">Samantha Black</h1>
+                        <p class="text-xs text-brand-slate">Property Practitioner</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#selling" class="text-brand-onyx hover:text-brand-green font-medium transition-colors">Selling</a>
+                    <a href="#legal" class="text-brand-onyx hover:text-brand-green font-medium transition-colors">Legal & Compliance</a>
+                    <a href="#financials" class="text-brand-onyx hover:text-brand-green font-medium transition-colors">Financials</a>
+                    <a href="#resources" class="text-brand-onyx hover:text-brand-green font-medium transition-colors">Resources</a>
+                    <a href="#about" class="text-brand-onyx hover:text-brand-green font-medium transition-colors">About</a>
+                    <a href="#contact" class="bg-brand-green hover:bg-brand-greenDark text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Free Valuation</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-onyx hover:text-brand-green focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#selling" class="block px-3 py-2 text-brand-onyx font-medium hover:bg-brand-pearl rounded-md">Selling</a>
+                <a href="#legal" class="block px-3 py-2 text-brand-onyx font-medium hover:bg-brand-pearl rounded-md">Legal & Compliance</a>
+                <a href="#financials" class="block px-3 py-2 text-brand-onyx font-medium hover:bg-brand-pearl rounded-md">Financials</a>
+                <a href="#resources" class="block px-3 py-2 text-brand-onyx font-medium hover:bg-brand-pearl rounded-md">Resources</a>
+                <a href="#about" class="block px-3 py-2 text-brand-onyx font-medium hover:bg-brand-pearl rounded-md">About</a>
+                <a href="#contact" class="block px-3 py-2 text-brand-green font-bold hover:bg-brand-pearl rounded-md">Free Valuation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row items-center">
+            <div class="md:w-2/3 reveal">
+                <div class="flex items-center justify-center md:justify-start gap-4 mb-6 mt-8 md:mt-0">
+                    <img src="Samantha%20profile%20picture.jpeg" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'" alt="Samantha Black - Real Estate Agent" class="w-16 h-16 rounded-full border-2 border-brand-green object-cover shadow-lg">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-green bg-opacity-20 text-brand-green font-semibold text-sm border border-brand-green">
+                        Cape Town Real Estate Expert
+                    </span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                    Navigate the South African <br/> Property Market with <span class="text-brand-green">Confidence.</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+                    Expert guidance, transparent processes, and dedicated service from listing to Deeds Office registration. Maximize your property's value in 2026.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-brand-green hover:bg-brand-greenDark text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl text-center">
+                        Request a Free Valuation
+                    </a>
+                    <a href="#guide" class="bg-white hover:bg-gray-100 text-brand-onyx px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg text-center flex items-center justify-center gap-2">
+                        <i class="fas fa-download text-brand-green"></i> 2026 Seller's Guide
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Banner -->
+    <div class="bg-brand-onyx py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-70">
+                <div class="flex items-center gap-2 text-white font-semibold">
+                    <i class="fas fa-certificate text-brand-green"></i> PPRA Registered
+                </div>
+                <div class="flex items-center gap-2 text-white font-semibold">
+                    <i class="fas fa-home text-brand-green"></i> Just Property Affiliate
+                </div>
+                <div class="flex items-center gap-2 text-white font-semibold">
+                    <i class="fas fa-file-contract text-brand-green"></i> eDRS Compliant
+                </div>
+                <div class="flex items-center gap-2 text-white font-semibold">
+                    <i class="fas fa-map-marker-alt text-brand-green"></i> Western Cape Specialist
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Educational Teasers (The Seller's Journey) -->
+    <section class="py-20 bg-brand-pearl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h3 class="text-3xl font-bold text-brand-onyx mb-4">Your Successful Sale Framework</h3>
+                <p class="text-lg text-brand-slate max-w-2xl mx-auto">Selling a home goes beyond placing a board outside. It requires strategic pricing, strict legal compliance, and smart financial planning.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100 reveal">
+                    <div class="w-14 h-14 bg-brand-green bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-brand-green"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-onyx mb-3">Prepare to Sell</h4>
+                    <p class="text-brand-slate mb-6">Discover how to price correctly in a buyer-sensitive market and understand the power of a sole mandate over an open listing.</p>
+                    <a href="#selling" class="text-brand-green font-semibold hover:text-brand-greenDark flex items-center gap-2">
+                        Read More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100 reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-brand-green bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-balance-scale text-2xl text-brand-green"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-onyx mb-3">Legal Compliance</h4>
+                    <p class="text-brand-slate mb-6">Navigate the Property Practitioners Act, Mandatory Disclosure forms, and essential compliance certificates (CoCs) without stress.</p>
+                    <a href="#legal" class="text-brand-green font-semibold hover:text-brand-greenDark flex items-center gap-2">
+                        Read More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100 reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-green bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-calculator text-2xl text-brand-green"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-onyx mb-3">Financial Planning</h4>
+                    <p class="text-brand-slate mb-6">Calculate the true cost of selling, including bond cancellation fees, Capital Gains Tax (CGT), and occupational rent logistics.</p>
+                    <a href="#financials" class="text-brand-green font-semibold hover:text-brand-greenDark flex items-center gap-2">
+                        Read More <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selling Your Home -->
+    <section id="selling" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 reveal">
+                    <img src="https://images.unsplash.com/photo-1560518884-ce5882228a4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Home Valuation" class="rounded-2xl shadow-lg">
+                </div>
+                <div class="md:w-1/2 reveal">
+                    <h2 class="text-3xl font-bold text-brand-onyx mb-6">Maximize Your Property's Value</h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-bold text-brand-onyx flex items-center gap-2 mb-2">
+                                <i class="fas fa-tag text-brand-green"></i> Pricing Strategy
+                            </h4>
+                            <p class="text-brand-slate">Automated online estimates lack nuance. A professional Comparative Market Analysis (CMA) evaluates recent local transfers, current market competition, and your home's unique features to set a target that attracts buyers rather than pushing them away.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-bold text-brand-onyx flex items-center gap-2 mb-2">
+                                <i class="fas fa-handshake text-brand-green"></i> The Power of a Sole Mandate
+                            </h4>
+                            <p class="text-brand-slate">Unlike an open mandate where agents compete against each other (often pushing you to accept lower offers quickly), a sole mandate guarantees dedicated marketing budget, a single point of secure contact, and an agent working to get the highest price for <em>you</em>.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-brand-onyx flex items-center gap-2 mb-2">
+                                <i class="fas fa-route text-brand-green"></i> The Conveyancing Timeline
+                            </h4>
+                            <p class="text-brand-slate">From signing the Offer to Purchase (OTP) to final Deeds Office registration via the new eDRS system, expect an 8 to 12-week journey. I align with top conveyancing attorneys to track every milestone for you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#contact" class="inline-block border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white px-6 py-3 rounded-full font-bold transition-colors">
+                            Book an In-Person Valuation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal & Compliance -->
+    <section id="legal" class="py-20 bg-brand-onyx text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold mb-4">No Surprises: Navigating Property Law</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">The South African legal landscape for property transfers is rigorous. Understanding these elements protects you from future litigation and costly delays.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Legal Texts -->
+                <div class="space-y-8 reveal">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h4 class="text-xl font-bold text-brand-green mb-3">The Mandatory Disclosure Form</h4>
+                        <p class="text-gray-300 text-sm">Required by the Property Practitioners Act. Before a mandate is signed, sellers must formally declare all known property defects. Full transparency is your best defense against "voetstoots" disputes down the line.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h4 class="text-xl font-bold text-brand-green mb-3">The 72-Hour Clause</h4>
+                        <p class="text-gray-300 text-sm">Also known as the Continued Marketing Clause. If you accept an offer with suspensive conditions (like the buyer needing to sell their own house), this clause allows you to keep marketing. If you get a better, unconditional offer, the first buyer has 72 hours to waive their conditions or step aside.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h4 class="text-xl font-bold text-brand-green mb-3">SPLUMA Certificates</h4>
+                        <p class="text-gray-300 text-sm">Required by many municipalities before transfer, proving that the property's zoning and as-built structures comply with approved municipal plans.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion: Compliance Certificates -->
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-2">Required Compliance Certificates (CoC)</h3>
+                    <p class="text-sm text-gray-400 mb-6">Sellers are legally obligated to provide these certificates to the conveyancing attorney prior to registration.</p>
+                    
+                    <div class="space-y-4">
+                        <!-- Accordion Item -->
+                        <div class="border border-gray-700 rounded-lg overflow-hidden">
+                            <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-800 hover:bg-gray-700 focus:outline-none transition-colors">
+                                <span class="font-semibold">Electrical Certificate</span>
+                                <i class="fas fa-chevron-down text-brand-green transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content bg-gray-900">
+                                <p class="p-4 text-sm text-gray-400">Certifies that the electrical installation is safe. Must not be older than 2 years, provided no alterations have been made.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Accordion Item -->
+                        <div class="border border-gray-700 rounded-lg overflow-hidden">
+                            <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-800 hover:bg-gray-700 focus:outline-none transition-colors">
+                                <span class="font-semibold">Water / Plumbing Certificate</span>
+                                <i class="fas fa-chevron-down text-brand-green transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content bg-gray-900">
+                                <p class="p-4 text-sm text-gray-400">A specific by-law requirement for properties in the City of Cape Town municipality. Ensures no water wastage, leaks, and that geysers comply with SANS regulations.</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item -->
+                        <div class="border border-gray-700 rounded-lg overflow-hidden">
+                            <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-800 hover:bg-gray-700 focus:outline-none transition-colors">
+                                <span class="font-semibold">Beetle Certificate</span>
+                                <i class="fas fa-chevron-down text-brand-green transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content bg-gray-900">
+                                <p class="p-4 text-sm text-gray-400">Standard practice in coastal provinces (Western Cape, KZN). Certifies that accessible timber is free of wood-destroying insects.</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item -->
+                        <div class="border border-gray-700 rounded-lg overflow-hidden">
+                            <button class="accordion-header w-full flex justify-between items-center p-4 bg-gray-800 hover:bg-gray-700 focus:outline-none transition-colors">
+                                <span class="font-semibold">Gas & Electric Fence</span>
+                                <i class="fas fa-chevron-down text-brand-green transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content bg-gray-900">
+                                <p class="p-4 text-sm text-gray-400">If the property has gas installations or an electric fence system, certificates of conformity are required for both before transfer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financials & Taxes -->
+    <section id="financials" class="py-20 bg-brand-pearl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-brand-onyx mb-4">Understand Your Bottom Line</h2>
+                <p class="text-lg text-brand-slate max-w-2xl mx-auto">Don't let hidden costs erode your capital. Be prepared for the financial realities of selling property in 2026.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Cost 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-brand-green reveal">
+                    <h3 class="text-xl font-bold text-brand-onyx mb-4">The True Cost of Selling</h3>
+                    <ul class="space-y-3 text-brand-slate text-sm">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-green mt-1"></i> <strong>Agent Commission:</strong> Professional fee for marketing, negotiating, and closing.</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-green mt-1"></i> <strong>Bond Cancellation:</strong> Banks require 90 days' notice to cancel a bond, or penalties apply. Attorneys also charge a cancellation fee.</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-green mt-1"></i> <strong>Municipal Clearance:</strong> You must pay rates and utility services 3-4 months in advance to obtain a clearance figure.</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-brand-green mt-1"></i> <strong>Compliance Repairs:</strong> Budget for potential repairs needed to obtain your CoCs.</li>
+                    </ul>
+                </div>
+
+                <!-- Cost 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-brand-green reveal" style="transition-delay: 100ms;">
+                    <h3 class="text-xl font-bold text-brand-onyx mb-4">Capital Gains Tax (CGT)</h3>
+                    <p class="text-brand-slate text-sm mb-4">If the property is your primary residence, you benefit from a significant SARS exclusion.</p>
+                    <div class="bg-brand-pearl p-4 rounded-lg mb-4">
+                        <p class="text-brand-onyx font-bold">The Primary Residence Exclusion:</p>
+                        <p class="text-2xl font-black text-brand-green">R2 Million</p>
+                    </div>
+                    <p class="text-brand-slate text-sm">This means the first R2m of your capital profit is exempt from CGT. For secondary properties or investment rentals, this exclusion does not apply.</p>
+                </div>
+
+                <!-- Cost 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-brand-green reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold text-brand-onyx mb-4">Occupational Rent</h3>
+                    <p class="text-brand-slate text-sm mb-4">What happens if the buyer moves in before the Deeds Office registers the transfer, or if you need to stay after?</p>
+                    <p class="text-brand-slate text-sm mb-4">Occupational rent protects both parties. It is a pre-agreed monthly amount (usually ~0.8% of purchase price or market rental value) stipulated in the OTP.</p>
+                    <p class="text-brand-slate text-sm font-semibold italic">Pro Tip: Always ensure occupational rent terms are fair to prevent friction on moving day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Resources & Media -->
+    <section id="resources" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-brand-onyx mb-4">Expert Resources & Media</h2>
+                <p class="text-lg text-brand-slate max-w-2xl mx-auto">Everything you need to confidently navigate the property market—watch, read, and download.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Explainer Video -->
+                <div class="bg-brand-pearl p-6 rounded-3xl shadow-sm border border-gray-100 reveal">
+                    <h3 class="text-2xl font-bold text-brand-onyx mb-4 flex items-center gap-3">
+                        <i class="fas fa-play-circle text-brand-green text-3xl"></i> Explainer Video
+                    </h3>
+                    <p class="text-brand-slate mb-6 text-sm">A quick 2-minute overview of the 2026 property sales process and legal requirements in South Africa.</p>
+                    <div class="relative w-full overflow-hidden rounded-xl shadow-md" style="padding-top: 56.25%;">
+                        <!-- YouTube Embed Placeholder -->
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Explainer Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Presentation Embed -->
+                    <div class="bg-brand-onyx text-white p-6 rounded-3xl shadow-sm reveal" style="transition-delay: 100ms;">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                            <i class="fas fa-chalkboard-teacher text-brand-green text-3xl"></i> Seller's Strategy Deck
+                        </h3>
+                        <p class="text-gray-400 mb-6 text-sm">Click through my comprehensive presentation on correctly pricing and marketing your home.</p>
+                        <div class="relative w-full overflow-hidden rounded-xl bg-gray-800 border border-gray-700 aspect-video flex items-center justify-center group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Presentation Slide" class="absolute w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                            <div class="z-10 text-center">
+                                <i class="fas fa-expand text-4xl text-brand-green mb-2"></i>
+                                <p class="font-bold">View Presentation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Downloadable Infographic -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col sm:flex-row items-center gap-6 reveal" style="transition-delay: 200ms;">
+                        <div class="w-full sm:w-1/3 aspect-[3/4] rounded-xl overflow-hidden shadow-md relative group">
+                            <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Process Infographic" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-brand-green bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-search-plus text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <div class="w-full sm:w-2/3">
+                            <h4 class="text-xl font-bold text-brand-onyx mb-2">The Conveyancing Timeline Infographic</h4>
+                            <p class="text-brand-slate text-sm mb-6">A visual roadmap from signing the Offer to Purchase (OTP) to the final Deeds Office registration.</p>
+                            <a href="#" download="Samantha_Black_Timeline_Infographic.pdf" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-greenDark text-white px-6 py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg w-full justify-center sm:w-auto">
+                                <i class="fas fa-file-download text-lg"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet / Download Guide -->
+    <section id="guide" class="py-16 bg-brand-green">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Download the 2026 Seller's Survival Guide</h2>
+            <p class="text-white text-lg mb-8 opacity-90">Get a comprehensive, printable checklist covering pricing strategies, staging tips, and all legal documents you need to prepare.</p>
+            
+            <form class='flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto' id='download-form' method='POST' name='download-guide'><input type='hidden' name='form-name' value='download-guide' />
+                <input type="text" id="dl-name" name="name" placeholder="Your First Name" required class="px-5 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-onyx flex-1">
+                <input type="email" id="dl-email" name="email" placeholder="Your Email Address" required class="px-5 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-onyx flex-1">
+                <button type="submit" class="bg-brand-onyx hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg whitespace-nowrap">
+                    Get My Free Guide
+                </button>
+            </form>
+            
+            <!-- Success Message (Hidden by default) -->
+            <div id="dl-success" class="hidden mt-6 bg-white bg-opacity-20 rounded-lg p-4 text-white font-semibold border border-white">
+                <i class="fas fa-check-circle mr-2"></i> Thank you, <span id="dl-success-name"></span>! Your guide is being sent to your inbox.
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Contact Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                
+                <!-- Profile Side -->
+                <div class="lg:w-5/12 reveal">
+                    <div class="relative mb-8">
+                        <!-- Profile Image Placeholder (Using generic professional portrait) -->
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative">
+                            <img src="Samantha%20profile%20picture.jpeg" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Samantha Black" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                                <h2 class="text-3xl font-bold text-white">Samantha Black</h2>
+                                <p class="text-brand-green font-semibold">Trainee Property Practitioner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-brand-onyx mb-4">Dedicated to Your Peace of Mind</h3>
+                    <p class="text-brand-slate mb-4">
+                        As a proud representative of <strong>Just Property</strong> in Cape Town, I believe that selling a home shouldn't be a source of anxiety. My role is to bridge the gap between complex property law and your financial goals.
+                    </p>
+                    <p class="text-brand-slate mb-6">
+                        Whether you are navigating a divorce, downsizing for retirement, or capitalizing on the 2026 property cycle, I provide transparent, step-by-step guidance. I coordinate with top conveyancers and compliance inspectors so you can focus on your next chapter.
+                    </p>
+                    
+                    <div class="space-y-3">
+                        <p class="flex items-center text-brand-onyx font-medium">
+                            <i class="fas fa-phone-alt text-brand-green w-6"></i> +27 (0) 82 000 0000
+                        </p>
+                        <p class="flex items-center text-brand-onyx font-medium">
+                            <i class="fas fa-envelope text-brand-green w-6"></i> samantha.b@justproperty.co.za
+                        </p>
+                        <p class="flex items-center text-brand-onyx font-medium">
+                            <i class="fas fa-map-marker-alt text-brand-green w-6"></i> Cape Town, Western Cape
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form Side -->
+                <div id="contact" class="lg:w-7/12 bg-brand-pearl p-8 md:p-12 rounded-3xl shadow-sm reveal">
+                    <h3 class="text-3xl font-bold text-brand-onyx mb-2">Request a Free Valuation</h3>
+                    <p class="text-brand-slate mb-8">Fill out the details below, and I will contact you to arrange a comprehensive Comparative Market Analysis (CMA) of your property.</p>
+                    
+                    <form class='space-y-6' id='contact-form' method='POST' name='contact'><input type='hidden' name='form-name' value='contact' />
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-onyx mb-2" for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-shadow">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-onyx mb-2" for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-shadow">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-brand-onyx mb-2" for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-shadow">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-brand-onyx mb-2" for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-shadow">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-brand-onyx mb-2" for="address">Property Address / Suburb *</label>
+                            <input type="text" id="address" name="address" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-shadow" placeholder="e.g. 123 Main Rd, Claremont">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-brand-onyx mb-2" for="intent">How can I help you? *</label>
+                            <select id="intent" name="intent" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-shadow bg-white">
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Ready to sell immediately">I am ready to sell immediately</option>
+                                <option value="Curious about value">I am just curious about my property's value</option>
+                                <option value="Need legal/process advice">I need advice on the selling process/laws</option>
+                                <option value="Looking to buy">I am looking to buy a property</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenDark text-white font-bold py-4 px-8 rounded-lg transition-all shadow-md hover:shadow-lg mt-4 text-lg">
+                            Send Request
+                        </button>
+                    </form>
+
+                    <!-- Contact Form Success Message -->
+                    <div id="contact-success" class="hidden mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                        <strong class="font-bold">Message Sent!</strong>
+                        <span class="block sm:inline">Thank you for reaching out. I will be in touch with you shortly to assist with your property needs.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-onyx text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-green rounded flex items-center justify-center text-white font-bold text-sm">
+                            SB
+                        </div>
+                        <h2 class="text-white font-bold text-xl">Samantha Black</h2>
+                    </div>
+                    <p class="text-sm mb-4 max-w-md">Operating under Just Property. Registered with the Property Practitioners Regulatory Authority (PPRA). Committed to excellence, transparency, and integrity in the South African Real Estate Market.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#selling" class="hover:text-brand-green transition-colors">Selling Framework</a></li>
+                        <li><a href="#legal" class="hover:text-brand-green transition-colors">Legal & Compliance</a></li>
+                        <li><a href="#financials" class="hover:text-brand-green transition-colors">Financial Guide</a></li>
+                        <li><a href="#about" class="hover:text-brand-green transition-colors">About Samantha</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition-colors">PAIA Manual</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 Samantha Black - Just Property. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Menu Toggle ---
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Hide mobile menu on link click
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // --- Sticky Navbar Styling on Scroll ---
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-lg', 'py-1');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'py-1');
+                }
+            });
+
+            // --- Scroll Reveal Animation using Intersection Observer ---
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+
+            // --- Accordion Logic ---
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('i');
+                    
+                    // Close others
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header) {
+                            otherHeader.nextElementSibling.style.maxHeight = null;
+                            otherHeader.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // --- Form Submissions (Prevent Default & Show Success) ---
+            
+            // Download Guide Form
+            const dlForm = document.getElementById('download-form');
+            if(dlForm) {
+                dlForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(dlForm);
+                    const name = document.getElementById('dl-name').value;
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(formData).toString()
+                    }).then(() => {
+                        document.getElementById('dl-success-name').textContent = name;
+                        dlForm.classList.add('hidden');
+                        document.getElementById('dl-success').classList.remove('hidden');
+                    }).catch(() => {
+                        document.getElementById('dl-success-name').textContent = name;
+                        dlForm.classList.add('hidden');
+                        document.getElementById('dl-success').classList.remove('hidden');
+                    });
+                });
+            }
+
+            // Contact Form
+            const contactForm = document.getElementById('contact-form');
+            if(contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(contactForm);
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(formData).toString()
+                    }).then(() => {
+                        contactForm.classList.add('hidden');
+                        document.getElementById('contact-success').classList.remove('hidden');
+                    }).catch(() => {
+                        contactForm.classList.add('hidden');
+                        document.getElementById('contact-success').classList.remove('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
