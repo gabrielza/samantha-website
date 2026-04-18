@@ -12,11 +12,42 @@ import testimonials from '../data/testimonials';
 export default function HomePage() {
   const highlightedNeighborhoods = neighborhoods.slice(0, 4);
 
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    name: 'Samantha Black — Just Property Cape Town',
+    url: 'https://www.samanthablack.co.za',
+    image: 'https://www.samanthablack.co.za/images/Samantha_Profile_Picture.jpeg',
+    description: 'Experienced Property Practitioner specialising in luxury rentals and residential sales across Cape Town\'s Atlantic Seaboard, City Bowl, and Northern Suburbs.',
+    telephone: contact.phone,
+    email: contact.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Cape Town',
+      addressRegion: 'Western Cape',
+      addressCountry: 'ZA',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Cape Town',
+    },
+    memberOf: {
+      '@type': 'Organization',
+      name: 'Just Property',
+      url: 'https://www.just.property',
+    },
+    sameAs: [
+      contact.social.instagram,
+      contact.social.linkedin,
+    ],
+  };
+
   return (
     <>
       <SEO
         description="Samantha Black — Property Practitioner, Just Property Cape Town. Luxury rentals, residential sales, and expert guidance across the Atlantic Seaboard, City Bowl, Parklands, and beyond."
         path="/"
+        jsonLd={homeJsonLd}
       />
 
       {/* ===== HERO ===== */}
@@ -27,6 +58,7 @@ export default function HomePage() {
             src="/images/Free_Property_Valuation.jpeg"
             alt="Luxury Cape Town property with Table Mountain"
             className="h-full w-full object-cover"
+            fetchPriority="high"
           />
         </div>
 

@@ -1,23 +1,25 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import Layout from './components/layout/Layout';
 import HomePage from './pages/HomePage';
-import PropertiesPage from './pages/PropertiesPage';
-import PropertyDetailsPage from './pages/PropertyDetailsPage';
-import AboutPage from './pages/AboutPage';
-import NeighborhoodsPage from './pages/NeighborhoodsPage';
-import NeighborhoodDetailPage from './pages/NeighborhoodDetailPage';
-import ResourcesPage from './pages/ResourcesPage';
-import ItineraryPage from './pages/ItineraryPage';
-import ContactPage from './pages/ContactPage';
-import ValuationPage from './pages/ValuationPage';
-import CalculatorsPage from './pages/CalculatorsPage';
-import BondCalculatorPage from './pages/BondCalculatorPage';
-import TransferCostCalculatorPage from './pages/TransferCostCalculatorPage';
-import AffordabilityCalculatorPage from './pages/AffordabilityCalculatorPage';
-import SellerCalculatorPage from './pages/SellerCalculatorPage';
-import BuyersGuidePage from './pages/BuyersGuidePage';
-import SellersGuidePage from './pages/SellersGuidePage';
+
+// Lazy-load non-critical pages for faster initial load
+const PropertiesPage = lazy(() => import('./pages/PropertiesPage'));
+const PropertyDetailsPage = lazy(() => import('./pages/PropertyDetailsPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const NeighborhoodsPage = lazy(() => import('./pages/NeighborhoodsPage'));
+const NeighborhoodDetailPage = lazy(() => import('./pages/NeighborhoodDetailPage'));
+const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
+const ItineraryPage = lazy(() => import('./pages/ItineraryPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const ValuationPage = lazy(() => import('./pages/ValuationPage'));
+const CalculatorsPage = lazy(() => import('./pages/CalculatorsPage'));
+const BondCalculatorPage = lazy(() => import('./pages/BondCalculatorPage'));
+const TransferCostCalculatorPage = lazy(() => import('./pages/TransferCostCalculatorPage'));
+const AffordabilityCalculatorPage = lazy(() => import('./pages/AffordabilityCalculatorPage'));
+const SellerCalculatorPage = lazy(() => import('./pages/SellerCalculatorPage'));
+const BuyersGuidePage = lazy(() => import('./pages/BuyersGuidePage'));
+const SellersGuidePage = lazy(() => import('./pages/SellersGuidePage'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -27,13 +29,22 @@ function ScrollToTop() {
   return null;
 }
 
+function PageFallback() {
+  return (
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <div className="h-8 w-8 border-3 border-teal-200 border-t-gold-500 rounded-full animate-spin" />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <>
       <ScrollToTop />
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
+      <Suspense fallback={<PageFallback />}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
           <Route path="/properties" element={<PropertiesPage />} />
           <Route path="/properties/:slug" element={<PropertyDetailsPage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -51,7 +62,8 @@ export default function App() {
           <Route path="/guides/buyers-guide" element={<BuyersGuidePage />} />
           <Route path="/guides/sellers-guide" element={<SellersGuidePage />} />
         </Route>
-      </Routes>
+        </Routes>
+      </Suspense>
     </>
   );
 }

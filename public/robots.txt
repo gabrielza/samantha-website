@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.samanthablack.co.za/sitemap.xml
+
+# Disallow crawling of API endpoints
+User-agent: *
+Disallow: /api/
