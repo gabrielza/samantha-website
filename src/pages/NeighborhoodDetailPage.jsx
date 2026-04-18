@@ -33,8 +33,14 @@ export default function NeighborhoodDetailPage() {
       />
 
       {/* Hero */}
-      <section className="bg-teal-800 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-teal-800 py-16 overflow-hidden">
+        {neighborhood.image && (
+          <div className="absolute inset-0">
+            <img src={neighborhood.image} alt={neighborhood.name} className="h-full w-full object-cover opacity-30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-900 via-teal-900/90 to-teal-800/80" />
+          </div>
+        )}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-xs text-gray-400 mb-6">
             <Link to="/" className="hover:text-gold-400">Home</Link>
             <span>/</span>

@@ -7,9 +7,18 @@ export default function NeighborhoodCard({ neighborhood }) {
       className="group block rounded-xl bg-white border border-gray-100 hover:shadow-lg hover:border-gold-200 transition-all duration-300 overflow-hidden"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-teal-800">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-teal-900 flex items-center justify-center">
-          <span className="text-2xl font-semibold text-gold-400/20">{neighborhood.name}</span>
-        </div>
+        {neighborhood.image ? (
+          <img
+            src={neighborhood.image}
+            alt={`${neighborhood.name}, Cape Town`}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-700 to-teal-900 flex items-center justify-center">
+            <span className="text-2xl font-semibold text-gold-400/20">{neighborhood.name}</span>
+          </div>
+        )}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-3 pt-8">
           <span className="text-[10px] uppercase tracking-[0.15em] text-gold-400">{neighborhood.region}</span>
           <h3 className="text-lg font-semibold text-white">{neighborhood.name}</h3>

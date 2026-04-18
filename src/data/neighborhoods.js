@@ -5,6 +5,7 @@ const neighborhoods = [
     name: 'Clifton',
     region: 'Atlantic Seaboard',
     tagline: 'Unparalleled Exclusivity',
+    image: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&h=500&fit=crop&q=80',
     description:
       'Clifton is the apex of Cape Town luxury living. Characterized by steep slopes and contemporary modernist glass-and-steel architecture, Clifton offers unmatched exclusivity across its four wind-sheltered beaches. Properties here command the highest per-square-metre prices on the African continent, attracting ultra-high-net-worth individuals seeking absolute privacy and breathtaking ocean panoramas.',
     highlights: [
@@ -25,6 +26,7 @@ const neighborhoods = [
     name: 'Camps Bay',
     region: 'Atlantic Seaboard',
     tagline: 'Beachfront Energy & Luxury',
+    image: 'https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e?w=800&h=500&fit=crop&q=80',
     description:
       "Camps Bay is the epicenter of Cape Town's beachfront energy and luxury beach culture. The palm-lined promenade buzzes with world-class restaurants and sundowner bars, while the residential landscape ranges from sought-after beachfront apartments to panoramic villas nestled higher up in \"The Glen\". With the Twelve Apostles as its dramatic backdrop, Camps Bay offers an aspirational lifestyle that attracts both local elites and international visitors.",
     highlights: [
@@ -45,6 +47,7 @@ const neighborhoods = [
     name: 'Bantry Bay',
     region: 'Atlantic Seaboard',
     tagline: 'Sunset Sanctuary',
+    image: 'https://images.unsplash.com/photo-1588001400947-6385aef4ab0e?w=800&h=500&fit=crop&q=80',
     description:
       "Bantry Bay occupies a unique geographic position facing northwest, providing ultimate protection from the notorious \"Cape Doctor\" south-easter winds. This orientation delivers Cape Town's most spectacular unobstructed sunset views over the Atlantic Ocean and rocky tidal pools. The neighborhood is characterised by luxury apartment complexes and boutique residential blocks, offering a quieter, more refined alternative to the bustle of neighbouring Clifton and Camps Bay.",
     highlights: [
@@ -65,6 +68,7 @@ const neighborhoods = [
     name: 'Fresnaye',
     region: 'Atlantic Seaboard',
     tagline: 'Elevated Family Elegance',
+    image: 'https://images.unsplash.com/photo-1577948000111-9c970dfe3743?w=800&h=500&fit=crop&q=80',
     description:
       'Fresnaye is the Atlantic Seaboard address for affluent families seeking elevated elegance. Positioned above Sea Point and below Signal Hill, Fresnaye offers spacious established homes with expansive gardens and commanding views over Table Bay. The suburb is prized for its sense of space — a rarity on the densely developed Atlantic Seaboard — and its proximity to top-tier schools, the Sea Point Promenade, and the V&A Waterfront.',
     highlights: [
@@ -85,6 +89,7 @@ const neighborhoods = [
     name: 'Cape Town City Centre',
     region: 'City Bowl',
     tagline: 'Urban Sophistication',
+    image: 'https://images.unsplash.com/photo-1591828668730-5c7aad50c8d8?w=800&h=500&fit=crop&q=80',
     description:
       "Cape Town's City Centre is a dynamic urban hub where heritage architecture meets contemporary living. The precinct encompasses the vibrant neighbourhoods around Long Street, Bree Street, and the East City, offering an eclectic mix of converted warehouse lofts, modern high-rise apartments, and boutique residences. With the V&A Waterfront, CTICC, and a thriving arts and culinary scene at your doorstep, the City Centre is the ultimate address for young professionals and urban investors.",
     highlights: [
@@ -105,6 +110,7 @@ const neighborhoods = [
     name: 'Constantia',
     region: 'Southern Suburbs',
     tagline: 'Winelands Heritage',
+    image: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&h=500&fit=crop&q=80',
     description:
       "Constantia is Cape Town's oldest and most prestigious wine-producing region, offering a lifestyle defined by leafy avenues, historic wine estates, and world-class dining. The suburb is divided into Upper and Lower Constantia, with the upper reaches commanding premium prices and sweeping vineyard views. Families are drawn to Constantia for its proximity to the city's most elite schools, its sense of community, and the sheer natural beauty of its oak-lined streets.",
     highlights: [
@@ -125,6 +131,7 @@ const neighborhoods = [
     name: 'Parklands',
     region: 'Northern Suburbs',
     tagline: 'Modern Value & Lifestyle',
+    image: 'https://images.unsplash.com/photo-1614607242094-b1b2cf769ff3?w=800&h=500&fit=crop&q=80',
     description:
       "Parklands has emerged as one of Cape Town's most dynamic residential precincts, offering exceptional value for money compared to the Atlantic Seaboard. The suburb attracts a significant Gauteng semigrant demographic and young professionals seeking modern, secure estate living with excellent infrastructure. Expansive gated communities, contemporary shopping centres, and easy access to the N1 and R27 corridors make Parklands the smart choice for buyers seeking space, security, and connectivity.",
     highlights: [
@@ -145,6 +152,7 @@ const neighborhoods = [
     name: 'Rondebosch',
     region: 'Southern Suburbs',
     tagline: 'Academic Heartland',
+    image: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&h=500&fit=crop&crop=bottom&q=80',
     description:
       "Rondebosch sits at the academic heart of Cape Town, home to the University of Cape Town and surrounded by the city's most prestigious schools. The suburb offers a charming blend of Victorian and Edwardian architecture, tree-lined avenues, and a strong sense of community. Properties range from gracious family homes with large gardens to modern apartments catering to students and professionals. The proximity to UCT, Cavendish Square, and the Newlands sports precinct ensures enduring demand.",
     highlights: [
