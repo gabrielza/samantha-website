@@ -10,3 +10,6 @@ dist
 
 # VS Code workspace settings
 .vscode/
+
+# Office temp/lock files
+~$*
