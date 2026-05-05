@@ -7,3 +7,6 @@ dist
 
 # Local Netlify folder
 .netlify
+
+# VS Code workspace settings
+.vscode/
