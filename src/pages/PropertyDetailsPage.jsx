@@ -1,5 +1,6 @@
 ﻿import { Link } from 'react-router-dom';
 import SEO from '../components/common/SEO';
+import PropertyActions from '../components/common/PropertyActions';
 import jp from '../data/justproperty';
 
 export default function PropertyDetailsPage() {
@@ -35,6 +36,15 @@ export default function PropertyDetailsPage() {
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
           </a>
         </div>
+
+        {/* Direct lead-gen actions */}
+        <div className="mx-auto mt-8 max-w-md">
+          <p className="mb-2 text-[12px] font-medium uppercase tracking-wider text-slate-500">
+            Or talk to Samantha now
+          </p>
+          <PropertyActions variant="full" />
+        </div>
+
         <Link to="/properties" className="mt-8 inline-block text-[13px] text-gold-500 font-medium hover:text-gold-600">
           &larr; Back to Properties
         </Link>

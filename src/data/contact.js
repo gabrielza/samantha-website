@@ -38,6 +38,9 @@ const contact = {
   },
   whatsappMessage:
     "Hi Samantha, I'm reaching out from your website and would like to discuss the Cape Town property market.",
+  // Cal.com booking link — replace with your real event URL once configured.
+  // e.g. https://cal.com/samantha-black/viewing
+  calComUrl: 'https://cal.com/samantha-black/viewing',
 };
 
 export default contact;

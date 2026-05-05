@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropertyActions from './PropertyActions';
 
 const FALLBACK_IMG = 'data:image/svg+xml,' + encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" fill="#e2e8f0"><rect width="720" height="480"/><text x="360" y="240" text-anchor="middle" fill="#94a3b8" font-size="18" font-family="sans-serif">No Image</text></svg>'
@@ -106,6 +107,17 @@ export default function LiveListings({ type = 'for-sale', limit = 8 }) {
                 {listing.suburb}
               </p>
             )}
+
+            {/* Lead-gen actions */}
+            <PropertyActions
+              variant="compact"
+              property={{
+                title: listing.title,
+                price: listing.price,
+                suburb: listing.suburb,
+                href: listing.href,
+              }}
+            />
           </div>
         </a>
       ))}

@@ -1,4 +1,5 @@
 ﻿import { Link } from 'react-router-dom';
+import PropertyActions from './PropertyActions';
 
 export default function PropertyCard({ property }) {
   const placeholder = `https://placehold.co/600x400/1B2A4A/C9A96E?text=${encodeURIComponent(property.suburb)}`;
@@ -63,6 +64,19 @@ export default function PropertyCard({ property }) {
             ))}
           </div>
         )}
+
+        {/* Lead-gen actions */}
+        <PropertyActions
+          variant="compact"
+          property={{
+            title: property.title,
+            price: property.priceFormatted,
+            suburb: property.location || property.suburb,
+            href: typeof window !== 'undefined'
+              ? `${window.location.origin}/properties/${property.slug}`
+              : `/properties/${property.slug}`,
+          }}
+        />
       </div>
     </Link>
   );
