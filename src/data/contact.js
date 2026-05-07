@@ -8,7 +8,7 @@ const contact = {
   whatsapp: '27672708026',
   email: 'samanthab@just.property',
   website: 'www.samanthablack.co.za',
-  ffcNumber: 'FFC-000000',
+  ffcNumber: '1276605',
   ppraNumber: 'PPRA-000000',
   yearsExperience: 12,
   areas: [

@@ -13,3 +13,6 @@ dist
 
 # Office temp/lock files
 ~$*
+
+# Local-only divergent copy archived from OneDrive (see README-ARCHIVE.md inside)
+onedrive-archive/

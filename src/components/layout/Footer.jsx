@@ -108,6 +108,8 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
               <span>PPRA Registered</span>
               <span className="text-teal-600">·</span>
+              <span>FFC {contact.ffcNumber}</span>
+              <span className="text-teal-600">·</span>
               <span>eDRS Compliant</span>
               <span className="text-teal-600">·</span>
               <span>Property Practitioner</span>
