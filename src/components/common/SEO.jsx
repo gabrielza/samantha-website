@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-export default function SEO({ title, description, path = '', type = 'website', jsonLd }) {
+export default function SEO({ title, description, path = '', type = 'website', jsonLd, robots }) {
   const siteUrl = 'https://www.samanthablack.co.za';
   const fullTitle = title
     ? `${title} | Samantha Black — Cape Town Property Specialist`
@@ -12,6 +12,7 @@ export default function SEO({ title, description, path = '', type = 'website', j
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {robots && <meta name="robots" content={robots} />}
       <link rel="canonical" href={url} />
 
       {/* Open Graph */}

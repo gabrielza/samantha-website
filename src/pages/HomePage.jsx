@@ -58,7 +58,7 @@ export default function HomePage() {
             src="/images/Free_Property_Valuation.jpeg"
             alt="Luxury Cape Town property with Table Mountain"
             className="h-full w-full object-cover"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </div>
 
@@ -253,26 +253,32 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: 'Bond Calculator', href: '/calculators/bond', icon: '\uD83E\uDDEE', internal: true },
-              { label: 'Free Valuation', href: '/valuation', icon: '\uD83D\uDCCA', internal: true },
-              { label: 'Buyer\'s Guide', href: '/guides/buyers-guide', icon: '\uD83D\uDCD6', internal: true },
-              { label: 'All Calculators', href: '/calculators', icon: '\uD83D\uDDA9\uFE0F', internal: true },
-            ].map((tool) => {
-              const Tag = tool.internal ? Link : 'a';
-              const linkProps = tool.internal
-                ? { to: tool.href }
-                : { href: tool.href, target: '_blank', rel: 'noopener noreferrer' };
-              return (
-              <Tag
+              {
+                label: 'Bond Calculator', href: '/calculators/bond',
+                icon: <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" /></svg>,
+              },
+              {
+                label: 'Free Valuation', href: '/valuation',
+                icon: <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg>,
+              },
+              {
+                label: "Buyer's Guide", href: '/guides/buyers-guide',
+                icon: <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>,
+              },
+              {
+                label: 'All Calculators', href: '/calculators',
+                icon: <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 9.75V10.5" /></svg>,
+              },
+            ].map((tool) => (
+              <Link
                 key={tool.label}
-                {...linkProps}
+                to={tool.href}
                 className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 p-5 hover:shadow-md hover:border-gold-200 transition-all text-center group"
               >
-                <span className="text-2xl">{tool.icon}</span>
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-600 group-hover:bg-gold-50 group-hover:text-gold-600 transition-colors">{tool.icon}</span>
                 <span className="text-[13px] font-medium text-teal-700 group-hover:text-gold-600 transition-colors">{tool.label}</span>
-              </Tag>
-              );
-            })}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

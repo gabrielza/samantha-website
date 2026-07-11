@@ -3,11 +3,14 @@ import contact from '../../data/contact';
 
 export default function ContactForm({ formName = 'contact', propertyTitle = '', className = '' }) {
   const [submitted, setSubmitted] = useState(false);
+  const [busy, setBusy] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (busy) return;
     const form = e.target;
     const data = new FormData(form);
+    setBusy(true);
     try {
       await fetch('/', {
         method: 'POST',
@@ -17,6 +20,8 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
       setSubmitted(true);
     } catch {
       window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent('Website Inquiry')}&body=${encodeURIComponent(`Name: ${data.get('name')}\nPhone: ${data.get('phone')}\nMessage: ${data.get('message')}`)}`;
+    } finally {
+      setBusy(false);
     }
   };
 
@@ -62,6 +67,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
             id={`${formName}-name`}
             name="name"
             required
+            autoComplete="name"
             className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-[14px] outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
             placeholder="Your full name"
           />
@@ -76,6 +82,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
             id={`${formName}-email`}
             name="email"
             required
+            autoComplete="email"
             className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
             placeholder="you@example.com"
           />
@@ -89,6 +96,7 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
             type="tel"
             id={`${formName}-phone`}
             name="phone"
+            autoComplete="tel"
             className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
             placeholder="+27 00 000 0000"
           />
@@ -109,9 +117,10 @@ export default function ContactForm({ formName = 'contact', propertyTitle = '', 
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-teal-800 px-6 py-2.5 text-[14px] font-semibold text-white hover:bg-teal-700 transition-colors"
+          disabled={busy}
+          className="w-full rounded-lg bg-teal-800 px-6 py-2.5 text-[14px] font-semibold text-white hover:bg-teal-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
         >
-          Send Message
+          {busy ? 'Sending…' : 'Send Message'}
         </button>
       </div>
     </form>

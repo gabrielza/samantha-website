@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropertyActions from './PropertyActions';
+import jp from '../../data/justproperty';
 
 const FALLBACK_IMG = 'data:image/svg+xml,' + encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" fill="#e2e8f0"><rect width="720" height="480"/><text x="360" y="240" text-anchor="middle" fill="#94a3b8" font-size="18" font-family="sans-serif">No Image</text></svg>'
@@ -47,7 +48,24 @@ export default function LiveListings({ type = 'for-sale', limit = 8 }) {
   }
 
   if (error || listings.length === 0) {
-    return null; // graceful — don't show section if no listings
+    // Graceful fallback — the section heading is already on screen, so leave
+    // a clear path to the live listings instead of an empty gap.
+    return (
+      <div className="rounded-2xl border border-dashed border-slate-200 bg-white px-6 py-12 text-center">
+        <p className="text-[14px] text-slate-500">
+          Live listings are unavailable right now.
+        </p>
+        <a
+          href={jp.agentListings}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-2 rounded-lg bg-teal-800 px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-teal-700 transition-colors"
+        >
+          View My Listings on Just Property
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+      </div>
+    );
   }
 
   return (

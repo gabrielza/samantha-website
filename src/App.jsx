@@ -20,11 +20,13 @@ const AffordabilityCalculatorPage = lazy(() => import('./pages/AffordabilityCalc
 const SellerCalculatorPage = lazy(() => import('./pages/SellerCalculatorPage'));
 const BuyersGuidePage = lazy(() => import('./pages/BuyersGuidePage'));
 const SellersGuidePage = lazy(() => import('./pages/SellersGuidePage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // 'instant' bypasses the CSS smooth-scroll so route changes don't animate
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
   return null;
 }
@@ -61,6 +63,7 @@ export default function App() {
           <Route path="/calculators/seller" element={<SellerCalculatorPage />} />
           <Route path="/guides/buyers-guide" element={<BuyersGuidePage />} />
           <Route path="/guides/sellers-guide" element={<SellersGuidePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         </Routes>
       </Suspense>
